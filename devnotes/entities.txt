@@ -42,6 +42,12 @@ x..x: something (read description)
 
 *   11xxxxxx xxxxxxxx -> red card
 
+H54:
+    11 - Statesman
+    00 - official non Statesman red card
+    01 - optional campaign red card (era: 001, 010, 110)
+H3210: if H54==11 then 1eee else nnnn
+
 11000001 xxxxxxxx -> Concession
 11000010 eeennnnn -> Law
 11000011 eeennnnn -> Intrigue / Leader
@@ -187,3 +193,66 @@ note: nr follows chronological order
 11001000 10000001 -> Influence Peddling
 11001000 10100001 -> Influence Peddling
 11001000 11000001 -> Influence Peddling
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001001 eeennnnn -> Mob Incited to Violence
+
+11001001 10000001 -> Mob Incited to Violence
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001001 eeennnnn -> Mob Incited to Violence
+
+11001001 10000001 -> Mob Incited to Violence
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001010 eeennnnn -> Murder of a Tribune
+
+11001010 10000001 -> Murder of a Tribune
+11001010 10000010 -> Murder of a Tribune
+11001010 10100001 -> Murder of a Tribune
+11001010 11000001 -> Murder of a Tribune
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001011 eeennnnn -> Open Bodyguard
+
+11001011 10100001 -> Open Bodyguard
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001011 eeennnnn -> Open Bodyguard
+
+11001011 10100001 -> Open Bodyguard
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001100 eeennnnn -> Proscription
+
+11001100 10100001 -> Proscription
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001101 eeennnnn -> Seduction
+
+11001101 01100001 -> Seduction
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001110 eeennnnn -> Secret Bodyguard
+
+11001110 01100001 -> Secret Bodyguard
+11001110 10000001 -> Secret Bodyguard
+11001110 10000010 -> Secret Bodyguard
+11001110 10100001 -> Secret Bodyguard
+11001110 11000001 -> Secret Bodyguard

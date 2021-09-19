@@ -1,0 +1,209 @@
+
+##############
+###  INFO  ###
+##############
+
+Every entities and values are represented on 2 BYTES.
+
+Entities can be physical as well as virtual.
+
+Thus, theoretically the game can have 65536 entities.
+
+Signed integer values in [−32,767, +32,767] range.
+Unsigned integer values in [0, 65,535] range.
+Values can have 16 flags.
+Mixed structures are allowed.
+
+LSB (least significant bit) 0 bit numbering: FEDCBA98.76543210
+
+Low 12 bits (BA9876543210) contains the entity ID.
+
+High 4 bits (FEDC) represents:
+    - if 0000 then the entity itself which you can think of as
+      item and/or location.
+    - otherwise an entity variable
+
+Every change in the game are represented by 2 x 2 = 4 BYTES.
+
+Movements: entity (2) to entity (2)
+New value: entity variable (2) is given a new value (2)
+
+
+
+##################
+###  ENTITIES  ###
+##################
+
+Bits BA represent the entity's main type:
+    - 00 : non-card
+    - 01 : other card
+    - 10 : red card
+    - 11 : black card
+
+
+
+=== non-card ===
+================
+
+Bit 9 represent:
+    - 0 : virtual
+    - 1 : physical
+
+
+
+=== other card ===
+==================
+
+Bits 98 represent other card type:
+    - 00 : Province
+    - 10 : Event
+
+
+-- Province --
+
+Bits 76 are always 00.
+Bits 543210 represent Province ID.
+Bit 5 represent undeveloped (0) / developed (1) version.
+
+00000100.00000000 : Cisalpine Gaul
+00000100.00000001 : Further Spain
+00000100.00000010 : Illyricum
+00000100.00000011 : Nearer Spain
+00000100.00000100 : Sardinia-Corsica
+00000100.00000101 : Sicily
+00000100.00000110 : Africa
+00000100.00000111 : Asia
+00000100.00001000 : Cilicia-Cyprus
+00000100.00001001 : Greece
+00000100.00001010 : Narbonese Gaul
+00000100.00001011 : Bithynia
+00000100.00001100 : Crete-Cyrene
+00000100.00001101 : Syria
+00000100.00001110 : Transalpine Gaul
+00000100.00001111 : Egypt
+
+00000100.00100000 : Cisalpine Gaul
+00000100.00100001 : Further Spain
+00000100.00100010 : Illyricum
+00000100.00100011 : Nearer Spain
+00000100.00100100 : Sardinia-Corsica
+00000100.00100101 : Sicily
+00000100.00100110 : Africa
+00000100.00100111 : Asia
+00000100.00101000 : Cilicia-Cyprus
+00000100.00101001 : Greece
+00000100.00101010 : Narbonese Gaul
+00000100.00101011 : Bithynia-Pontus
+00000100.00101100 : Crete-Cyrene
+00000100.00101101 : Syria
+00000100.00101110 : Transalpine Gaul
+00000100.00101111 : Egypt
+
+
+-- Event --
+
+Bits 76543210 represent Event ID.
+Bit 7 represent gray/front (0) / pink/back (1) version.
+
+Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
+    Shortages, Storms at Sea, and Mob Violence, any result matching that of a
+    pink event already in play is treated as no further effect but nonetheless
+    prevents the drawing of another Forum/Event card by that player."
+    Hence their lower IDs as there are condition variables defined for these.
+
+00000110.00000000 : Drought
+00000110.00000001 : Epidemic
+00000110.00000010 : Evil Omens
+00000110.00000011 : Manpower Shortage
+00000110.00000100 : Mob Violence
+00000110.00000101 : Storm at Sea
+00000110.00010000 : Ally Deserts
+00000110.00010001 : Allied Enthusiasm
+00000110.00010010 : Barbarian Raids
+00000110.00010011 : Enemy Leader Dies
+00000110.00010100 : Enemy's Ally Deserts
+00000110.00010101 : Internal Disorder
+00000110.00010110 : Natural Disaster
+00000110.00100000 : New Alliance
+00000110.00100001 : Pretender Emerges
+00000110.00100010 : Refuge
+00000110.00100011 : Rhodian Maritime Alliance
+00000110.00100100 : Trial of Verres
+
+00000110.10000000 : Severe Drought
+00000110.10000001 : Foreign Epidemic
+00000110.10000010 : More Evil Omens
+00000110.10000011 : Extreme Manpower Shortage
+00000110.10000100 : More Mob Violence
+00000110.10000101 : Another Storm at Sea
+00000110.10010000 : Roman Auxiliaries Desert
+00000110.10010001 : Extreme Allied Enthusiasm
+00000110.10010010 : Barbarian Raids Increase
+00000110.10010011 : Enemy Sues for Peace
+00000110.10010100 : Enemy Mercenaries Desert
+00000110.10010101 : Increased Internal Disorder
+00000110.10010110 : Widespread Natural Disaster
+00000110.10100000 : Another New Alliance
+00000110.10100001 : Pretender Victorious
+00000110.10100010 : Rise from Refuge
+00000110.10100011 : Increased Rhodian Involvemnent
+00000110.10100100 : Another Corruption Trial
+
+
+
+=== red card ===
+================
+
+Bits 98 represent red card type:
+    - 00 : Concession
+    - 01 : Intrigue
+    - 10 : Law
+    - 11 : Statesman
+
+
+-- Concession --
+
+00001000.00000001 : Tax Farmer 1
+00001000.00000010 : Tax Farmer 2
+00001000.00000011 : Tax Farmer 3
+00001000.00000100 : Tax Farmer 4
+00001000.00000101 : Tax Farmer 5
+00001000.00000110 : Tax Farmer 6
+00001000.00010000 : Armaments
+00001000.00100000 : Egyptian Grain
+00001000.00110000 : Harbor Fees
+00001000.01000000 : Land Comissioner
+00001000.01010000 : Mining
+00001000.01100000 : Ship Building
+00001000.01110000 : Sicilian Grain
+
+
+-- Intrigue --
+
+
+-- Law --
+
+
+-- Statesman --
+
+
+=== black card ===
+==================
+
+Bits 98 represent black card type:
+    - 00 : War / Revolt
+    - 01 : Enemy Leader
+    - 10 : Event
+    - 11 : Family Card
+
+
+-- War / Revolt --
+
+
+-- Enemy Leader --
+
+
+-- Event --
+
+
+-- Family Card --

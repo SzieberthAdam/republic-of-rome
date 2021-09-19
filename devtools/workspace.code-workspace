@@ -6,7 +6,7 @@
     ],
     "settings": {
         "editor.detectIndentation": false,
-        "editor.rulers": [64,80,112],
+        "editor.rulers": [80],
         "editor.useTabStops": false,
         "files.eol": "\r\n",
         "files.insertFinalNewline": true,
