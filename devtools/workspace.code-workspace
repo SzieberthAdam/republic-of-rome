@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": ".."
+        }
+    ],
+    "settings": {
+        "editor.detectIndentation": false,
+        "editor.rulers": [64,80,112],
+        "editor.useTabStops": false,
+        "files.eol": "\r\n",
+        "files.insertFinalNewline": true,
+        "files.trimFinalNewlines": true,
+        "files.trimTrailingWhitespace": true
+    }
+}

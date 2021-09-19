@@ -1,0 +1,189 @@
+All entities are defined by TWO BYTES (High and Low bytes).
+
+LSB (least significant bit) 0 bit numbering. H0 means the LSB
+of the High byte of the entity. L7 means the MSB (most
+significant bit) of the low byte.
+
+HHHHHHHH LLLLLLLL
+76543210 76543210
+
+Bit code:
+---------
+aa: statesman letter
+    00 - A
+    01 - B
+    10 - C
+    11 - D
+eee: era
+    000 - not an era
+    001 - Latin Period (Birth of the Republic)
+    010 - Italian Period
+    011 - Early Republic
+    100 - Middle Republic
+    101 - Late Republic
+    110 - Civil War
+    111 - optional / extra (house rule stuff)
+n..n: nr
+ssssss: senator id (0: special)
+x..x: something (read description)
+
+
+
+===============================
+00xxxxxx xxxxxxxx -> not card
+01xxxxxx xxxxxxxx -> blue card
+10xxxxxx xxxxxxxx -> black card
+    10111eee xxxxxxxx -> Senator
+11xxxxxx xxxxxxxx -> red card
+    11111eee xxxxxxxx -> Statesman
+===============================
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+
+11000001 xxxxxxxx -> Concession
+11000010 eeennnnn -> Law
+11000011 eeennnnn -> Intrigue / Leader
+11000100 eeennnnn -> Tribune
+11000101 eeennnnn -> Assassin
+11000110 eeennnnn -> Blackmail
+11000111 eeennnnn -> Graft
+11001000 eeennnnn -> Influence Peddling
+11001001 eeennnnn -> Mob Incited to Violence
+11001010 eeennnnn -> Murder of a Tribune
+11001011 eeennnnn -> Open Bodyguard
+11001100 eeennnnn -> Proscription
+11001101 eeennnnn -> Seduction
+11001110 eeennnnn -> Secret Bodyguard
+11010001 eeennnnn -> Annexation of Egypt
+11010010 eeennnnn -> Appian Works
+11010011 eeennnnn -> Assassination Conspiracy
+11010100 eeennnnn -> Marriage
+11010101 eeennnnn -> Scandal
+11010110 eeennnnn -> Ultimate Decree
+11111010 aassssss -> Latin Period Statesman
+11111011 aassssss -> Early Republic Statesman
+11111100 aassssss -> Middle Republic Statesman
+11111101 aassssss -> Late Republic Statesman
+11111110 aassssss -> Civil War Statesman
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000001 xxxxxxxx -> Concession
+
+L7 -> 0: per turn; 1: per condition met
+L654 -> Number of Talents
+L3 -> if L7==0 and 1 then Tax Farmer
+L2 -> special rule flag if L7==0 and not Tax Farmer;
+      if unset, general revenue and return rules apply
+L1 -> if L7==1 then 0: per legion, 1: per fleet
+L210 -> counter if Tax Farmer
+L10 -> counter if L7,L3,L2 == 0,0,0; type if L7,L3,L2 == 0,0,1
+
+11000001 00101001 -> Tax Farmer 1
+11000001 00101010 -> Tax Farmer 2
+11000001 00101011 -> Tax Farmer 3
+11000001 00101100 -> Tax Farmer 4
+11000001 00101101 -> Tax Farmer 5
+11000001 00101110 -> Tax Farmer 6
+11000001 00110000 -> Harbor Fees
+11000001 00110001 -> Mining
+11000001 00110100 -> Land Comissioner
+11000001 01000110 -> Sicilian Grain
+11000001 01010111 -> Egyptian Grain
+11000001 10100000 -> Armaments
+11000001 10110010 -> Ship Building
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000010 eeennnnn -> Law
+note: nr follows chronological order
+
+11000010 10000001 -> Acilian Law
+11000010 10000010 -> Calpurnian Law
+11000010 10000011 -> Servilian Law
+11000010 10000100 -> Military Reforms
+11000010 10000101 -> Tradition Erodes
+11000010 10100001 -> Julian Law
+11000010 10100010 -> Plautian-Papirian Law
+11000010 10100011 -> Gabinian Law
+11000010 10100100 -> Manilian Law
+11000010 10100101 -> Vatinian Law
+11000010 11000001 -> Military Command
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000011 eeennnnn -> Intrigue / Leader
+
+11000011 10100001 -> Cleopatra VII
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000100 eeennnnn -> Tribune
+
+11000100 00100001 -> Tribune
+11000100 01100001 -> Tribune
+11000100 01100010 -> Tribune
+11000100 01100011 -> Tribune
+11000100 01100100 -> Tribune
+11000100 01100101 -> Tribune
+11000100 01100110 -> Tribune
+11000100 01100111 -> Tribune
+11000100 01101000 -> Tribune
+11000100 01101001 -> Tribune
+11000100 10000001 -> Tribune
+11000100 10000010 -> Tribune
+11000100 10000011 -> Tribune
+11000100 10000100 -> Tribune
+11000100 10000101 -> Tribune
+11000100 10000110 -> Tribune
+11000100 10000111 -> Tribune
+11000100 10100001 -> Tribune
+11000100 10100010 -> Tribune
+11000100 10100011 -> Tribune
+11000100 10100100 -> Tribune
+11000100 11000001 -> Tribune
+11000100 11000010 -> Tribune
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000100 eeennnnn -> Assassin
+
+11000100 01100001 -> Assassin
+11000100 10000001 -> Assassin
+11000100 10000010 -> Assassin
+11000100 10100001 -> Assassin
+11000100 10100010 -> Assassin
+11000100 10100011 -> Assassin
+11000100 11000001 -> Assassin
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000110 eeennnnn -> Blackmail
+
+11000110 01100001 -> Blackmail
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11000111 eeennnnn -> Graft
+
+11000111 10000001 -> Graft
+11000111 10100001 -> Graft
+
+
+
+*   11xxxxxx xxxxxxxx -> red card
+**  11001000 eeennnnn -> Influence Peddling
+
+11001000 01100001 -> Influence Peddling
+11001000 10000001 -> Influence Peddling
+11001000 10100001 -> Influence Peddling
+11001000 11000001 -> Influence Peddling
