@@ -195,11 +195,13 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001001.10010000 : Seduction
 00001001.10011000 : Cleopatra VII
 00001001.10011001 : Annexation of Egypt
-00001001.10011010 : Appian Works
+00001001.10011010 : Appian Way (312 BC – 308 BC)
 00001001.10100000 : Assassination Conspiracy
-00001001.10101000 : Marriage
-00001001.10110000 -- 00001001.10110001 : Scandal
-00001001.10111000 : Ultimate Decree
+00001001.10101000 : Circus Maximus
+00001001.10110000 : Marriage
+00001001.10111000 -- 00001001.10111001 : Scandal
+00001001.11000000 : Spolia Opima
+00001001.11001000 : Ultimate Decree
 
 
 -- Law --
@@ -228,15 +230,17 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001011.00010100 : [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
 00001011.00011100 : [#7A] Marcus Fulvius Flaccus (? – 121 BC)
 00001011.00100000 : [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
-00001011.00101000 : [#10A] Lucius Junius Brutus (6th century BC)
+00001011.00101000 : [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
+00001011.00101010 : [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
 00001011.01001000 : [#18A] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
 00001011.01001001 : [#18B] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
 00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
 00001011.01001101 : [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
-00001011.01010100 : [#21A] Gaius Servilius Glaucia (? – 99 BC)
+00001011.01010100 : [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
 00001011.01011000 : [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
 00001011.01011001 : [#22B] Marcus Porcius Cato Uticensis (95 BC – 46 BC)
 00001011.01011100 : [#23A] Publius Popillius Laenas (2nd century BC)
+00001011.01100000 : [#24A] Spurius Cassius Viscellinus (5th century BC)
 00001011.01100100 : [#25A] Tiberius Sempronius Gracchus (c. 166 BC – 133 BC)
 00001011.01100101 : [#25B] Gaius Sempronius Gracchus (c. 154 BC – 121 BC)
 00001011.01101000 : [#26A] Gaius Octavius Thurinus (63 BC – 14 BC)
@@ -262,55 +266,118 @@ Bits 98 represent black card type:
 
 Note: Numbering follows chronological order.
 
-00001100.00000001 : 1st Latin War
-00001100.00000010 : Volscian War
-00001100.00000011 : Aequian War
-00001100.00000100 : Veientine War
-00001100.00000101 : 1st Samnite War
-00001100.00000110 : 2nd Latin War
-00001100.00000111 : 2nd Samnite War
-00001100.00001000 : 3rd Samnite War
-00001100.00001001 : Pyrrhic War
-00001100.00001010 : 1st Punic War
-00001100.00001011 : 1st Illyrian War
-00001100.00001100 : 1st Gallic War
-00001100.00001101 : 2nd Illyrian War
-00001100.00001110 : 2nd Punic War
-00001100.00001111 : 1st Macedonian War
-00001100.00010000 : 2nd Macedonian War
-00001100.00010001 : Syrian War
-00001100.00010010 : 3rd Macedonian War
-00001100.00010011 : Lusitanian War (Spanish Revolts)
-00001100.00010100 : 4th Macedonian War
-00001100.00010101 : 3rd Punic War
-00001100.00010110 : Numantine War
-00001100.00010111 : 1st Sicilian Slave Revolt
-00001100.00011000 : Jugurthine War
-00001100.00011001 : Germanic Migrations
-00001100.00011010 : 1st Cilician Pirates
-00001100.00011011 : 2nd Sicilian Slave Revolt
-00001100.00011100 : Social War
-00001100.00011101 : 1st Mithridatic War
-00001100.00011110 : 2nd Mithridatic War
-00001100.00011111 : Sertorian Revolt
-00001100.00100000 : 3rd Mithridatic War
-00001100.00100001 : Gladiator Slave Revolt
-00001100.00100010 : 2nd Cilician Pirates
-00001100.00100011 : 2nd Gallic War
-00001100.00100100 : Invasion of Britain
-00001100.00100101 : Invasion of Germany
-00001100.00100110 : Parthian War
-00001100.00100111 : 3rd Gallic War
-00001100.00101000 : Alexandrine War
-00001100.00101001 : Invasion of Partha
-00001100.00101010 : Dalmatian War
-00001100.00101011 : Cantabrian War
+00001100.00000001 : 1st Latin War (499 BC – 493 BC)
+00001100.00000010 : Aequian War (c. 494 BC – 455 BC)
+00001100.00000011 : Volscian War (c. 494 BC – 455 BC)
+00001100.00000100 : Veientine War (483 BC – 435 BC)
+00001100.00000101 : Siege of Veii (406 BC – 396 BC)
+00001100.00000110 : Tarquinian War (358 BC – 351 BC)
+00001100.00000111 : 1st Samnite War (343 BC – 341 BC)
+00001100.00001000 : 2nd Latin War (340 BC – 338 BC)
+00001100.00001001 : 2nd Samnite War (327 BC – 304 BC)
+00001100.00001010 : 3rd Samnite War (298 BC – 290 BC)
+00001100.00001011 : Pyrrhic War (280 BC – 272 BC)
+00001100.00001100 : 1st Punic War (264 BC – 241 BC)
+00001100.00001101 : 1st Illyrian War (229 BC – 228 BC)
+00001100.00001110 : 1st Gallic War (225 BC – 222 BC)
+00001100.00001111 : 2nd Illyrian War (220 BC – 219 BC)
+00001100.00010000 : 2nd Punic War (218 BC – 201 BC)
+00001100.00010001 : 1st Macedonian War (215 BC – 205 BC)
+00001100.00010010 : 2nd Macedonian War (200 BC – 196 BC)
+00001100.00010011 : Syrian War (192 BC – 189 BC)
+00001100.00010100 : 3rd Macedonian War (171 BC – 167 BC)
+00001100.00010101 : Spanish Revolts (Celtiberia / Lusitania) (154 BC – 139 BC)
+00001100.00010110 : 3rd Punic War (149 BC – 146 BC)
+00001100.00010111 : 4th Macedonian War (149 BC – 148 BC)
+00001100.00011000 : Numantine War (143 BC – 133 BC)
+00001100.00011001 : 1st Sicilian Slave Revolt (135 BC – 132 BC)
+00001100.00011010 : Germanic Migrations (111 BC – 102 BC)
+00001100.00011011 : Jugurthine War (111 BC – 105 BC)
+00001100.00011100 : 1st Cilician Pirates (104 BC – 101 BC)
+00001100.00011101 : 2nd Sicilian Slave Revolt (104 BC – 101 BC)
+00001100.00011110 : Social War (90 BC – 88 BC)
+00001100.00011111 : 1st Mithridatic War (89 BC – 85 BC)
+00001100.00100000 : 2nd Mithridatic War (83 BC – 82 BC)
+00001100.00100001 : Sertorian Revolt (77 BC – 71 BC)
+00001100.00100010 : 3rd Mithridatic War (74 BC – 63 BC)
+00001100.00100011 : Gladiator Slave Revolt (73 BC – 71 BC)
+00001100.00100100 : 2nd Cilician Pirates (67 BC – 61 BC)
+00001100.00100101 : 2nd Gallic War (58 BC – 56 BC)
+00001100.00100110 : Invasion of Britain (55 BC – 54 BC)
+00001100.00100111 : Invasion of Germany (55 BC)
+00001100.00101000 : Parthian War (53 BC)
+00001100.00101001 : 3rd Gallic War (52 BC – 51 BC)
+00001100.00101010 : Alexandrine War (48 BC – 47 BC)
+00001100.00101011 : Invasion of Partha
+00001100.00101100 : Cantabrian War
+00001100.00101101 : Dalmatian War
 
 
 -- Enemy Leader --
 
+00001101.00000001 : Lucius Tarquinius Superbus (? – 495 BC)
+00001101.00000010 : Gaius Marcius Coriolanus (? – 487 BC)
+00001101.00000011 : Pyrrhus (c. 319 BC – 272 BC)
+00001101.00000100 : Hamilcar (c. 275 BC – 229 BC)
+00001101.00000101 : Hannibal (247 BC – 183 BC)
+00001101.00000110 : Antiochus III (c. 242 BC – 187 BC)
+00001101.00000111 : Philip V (238 BC – 179 BC)
+00001101.00001000 : Viriathus (c. 180 BC – 139 BC)
+00001101.00001001 : Mithridates VI (120 BC – 63 BC)
+00001101.00001010 : Spartacus (c. 111 BC – 71 BC)
+00001101.00001011 : Vercingetorix  (82 BC – 46 BC)
+
 
 -- Event --
 
+00001110.00000001 : 1st Plebian Secession (494 BC)
+00001110.00000010 : Agrarian Unrest (485 BC)
+00001110.00000011 : The Twelve Tables (450 BC)
+00001110.00000100 : 2nd Plebian Secession (449 BC)
+00001110.00000101 : Spurius Maelius (439 BC)
+00001110.00000110 : Sack of Rome (390 BC)
+00001110.00000111 : Plebian Revolt (287 BC)
+00001110.00001000 : Gallic Raids (3rd century BC)
+00001110.00001001 : Pergamene Bequest (133 BC)
+00001110.00001010 : Ptolemy Apion Bequest (96 BC)
+00001110.00001011 : Bithynian Bequest (75 BC)
+00001110.00001100 : 2nd Catiline Conspiracy (63 BC)
+00001110.00001101 : Civil Unrest
+00001110.00001110 : Republic Restored
+
 
 -- Family Card --
+
+00001111.00000100 : [#1] Cornelius
+00001111.00001000 : [#2] Fabius
+00001111.00001100 : [#3] Valerius
+00001111.00010000 : [#4] Julius
+00001111.00010100 : [#5] Claudius
+00001111.00011000 : [#6] Manlius
+00001111.00011100 : [#7] Fulvius
+00001111.00100000 : [#8] Furius
+00001111.00100100 : [#9] Aurelius
+00001111.00101000 : [#10] Junius
+00001111.00101100 : [#11] Papirius
+00001111.00110000 : [#12] Acilius
+00001111.00110001 : [#12] Atilius
+00001111.00110100 : [#13] Flaminius
+00001111.00111000 : [#14] Aelius
+00001111.00111100 : [#15] Sulpicius
+00001111.01000000 : [#16] Calpurnius
+00001111.01000100 : [#17] Plautius
+00001111.01001000 : [#18] Quinctius
+00001111.01001100 : [#19] Aemilius
+00001111.01010000 : [#20] Terentius
+00001111.01010100 : [#21] Servilius
+00001111.01011000 : [#22] Porcius
+00001111.01011100 : [#23] Popillius
+00001111.01100000 : [#24] Cassius
+00001111.01100100 : [#25] Sempronius
+00001111.01101000 : [#26] Octavius
+00001111.01101100 : [#27] Marius
+00001111.01110000 : [#28] Tullius
+00001111.01110100 : [#29] Licinius
+00001111.01111000 : [#30] Pompeius
+00001111.01111100 : [#31] Domitius
+00001111.10000000 : [#32] Antonius
