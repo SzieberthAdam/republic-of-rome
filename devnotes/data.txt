@@ -222,9 +222,11 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 
 00001011.00000000 : [#xA] Military Leader
 00001011.00000100 : [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
-00001011.00000101 : [#1B] Publius Cornelius Scipio Aemilianus Africanus Numantinus (185 BC – 129 BC)
+00001011.00000101 : [#1B] Publius Cornelius Scipio Aemilianus Africanus
+                    Numantinus (185 BC – 129 BC)
 00001011.00000111 : [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
-00001011.00001000 : [#2A] Quintus Fabius Maximus Verrucosus Cunctator (c. 280 BC – 203 BC)
+00001011.00001000 : [#2A] Quintus Fabius Maximus Verrucosus Cunctator
+                    (c. 280 BC – 203 BC)
 00001011.00010000 : [#4A] Gaius Julius Caesar (100 BC – 44 BC)
 00001011.00010100 : [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
 00001011.00011100 : [#7A] Marcus Fulvius Flaccus (? – 121 BC)
@@ -233,7 +235,8 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001011.00101010 : [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
 00001011.01001000 : [#18A] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
 00001011.01001001 : [#18B] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
-00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
+00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus
+                    (c. 229 BC – 166 BC)
 00001011.01001101 : [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
 00001011.01010100 : [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
 00001011.01011000 : [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
@@ -387,6 +390,7 @@ Note: Numbering follows chronological order.
 ###  VALUES  ###
 ################
 
+
 -- Province --
 
 = FORMAT:
@@ -417,8 +421,8 @@ Note: Numbering follows chronological order.
     - Bits FEDCBA98 : UINT Armies
     - Bits 76543210 : UINT Fleets
 11110100.00xxxxxx : Rebel Reinforcement
-    - Bits FEDC==0x1 if reinforcement is in transit
-    - Bits FEDC==0xA if reinforcement has been added to the main rebel army
+    - Bits FEDC==0x1 if reinforcement is _in transit_
+    - Bits FEDC==0xA if reinforcement has been _added_ to the main rebel army
     - Bits BA98.76543210 : Rebel Entity ID
 
 = DEFAULTS:
@@ -582,3 +586,45 @@ Note: Numbering follows chronological order.
 01010100.00101101 = 0x0A0A : CONST Maximum Forces, Syria
 01010100.00101110 = 0x0A00 : CONST Maximum Forces, Transalpine Gaul
 01010100.00101111 = 0x080D : CONST Maximum Forces, Egypt
+
+
+-- Concession --
+
+= FORMAT:
+
+00011000.00xxxxxx : CONST Flags
+    - Bits 210 Tax Farmer destroyment value (1.09.611)
+    - Bit 4==1 if returns to Forum if depends on the exist of Land Bill(s)
+      (1.09.61)
+00101000.00xxxxxx : CONST Income
+    - Bit D : FLAG BIT income multiplies per drought condition
+    - Bits BA98 : Talents immediately per Legion raised
+    - Bits 7654 : Talents immediately per Fleet raised
+    - Bits 3210 : Talents per turn
+10001000.00xxxxxx : Proposal
+    - Bit C==1 if can not be proposed again during current Game Turn (1.09.61)
+    - Bits BA98.76543210 : Proposed Senator/Stateman Entity ID
+
+= DEFAULTS:
+
+00011000.00000001 = 0x0001 : CONST Flags, Tax Farmer 1
+00011000.00000010 = 0x0002 : CONST Flags, Tax Farmer 2
+00011000.00000011 = 0x0003 : CONST Flags, Tax Farmer 3
+00011000.00000100 = 0x0004 : CONST Flags, Tax Farmer 4
+00011000.00000101 = 0x0005 : CONST Flags, Tax Farmer 5
+00011000.00000110 = 0x0006 : CONST Flags, Tax Farmer 6
+00011000.01000000 = 0x0010 : CONST Flags, Land Comissioner
+
+00101000.00000001 = 0x0002 : CONST Income, Tax Farmer 1
+00101000.00000010 = 0x0002 : CONST Income, Tax Farmer 2
+00101000.00000011 = 0x0002 : CONST Income, Tax Farmer 3
+00101000.00000100 = 0x0002 : CONST Income, Tax Farmer 4
+00101000.00000101 = 0x0002 : CONST Income, Tax Farmer 5
+00101000.00000110 = 0x0002 : CONST Income, Tax Farmer 6
+00101000.00010000 = 0x0200 : CONST Income, Armaments
+00101000.00100000 = 0x2005 : CONST Income, Egyptian Grain
+00101000.00110000 = 0x0003 : CONST Income, Harbor Fees
+00101000.01000000 = 0x0003 : CONST Income, Land Comissioner
+00101000.01010000 = 0x0003 : CONST Income, Mining
+00101000.01100000 = 0x0030 : CONST Income, Ship Building
+00101000.01110000 = 0x2004 : CONST Income, Sicilian Grain
