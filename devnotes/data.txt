@@ -16,7 +16,7 @@ Mixed structures are allowed.
 
 LSB (least significant bit) 0 bit numbering: FEDCBA98.76543210
 
-Low 12 bits (BA9876543210) contains the entity ID.
+Low 12 bits (BA9876543210) contains the Entity ID.
 
 High 4 bits (FEDC) represents:
     - if 0000 then the entity itself which you can think of as
@@ -80,7 +80,6 @@ Bit 5 represent undeveloped (0) / developed (1) version.
 00000100.00001100 : Crete-Cyrene
 00000100.00001101 : Syria
 00000100.00001110 : Transalpine Gaul
-00000100.00001111 : Egypt
 
 00000100.00100000 : Cisalpine Gaul
 00000100.00100001 : Further Spain
@@ -381,3 +380,205 @@ Note: Numbering follows chronological order.
 00001111.01111000 : [#30] Pompeius
 00001111.01111100 : [#31] Domitius
 00001111.10000000 : [#32] Antonius
+
+
+
+################
+###  VALUES  ###
+################
+
+-- Province --
+
+= FORMAT:
+
+00010100.00xxxxxx : CONST Flags
+    - Bit 0==1 if Frontier
+00100100.00xxxxxx : CONST Income
+    - Bits FED : UINT Personal Income roll dice count + 4
+    - Bit CBA98 : UINT Personal Income bonus + 7
+    - Bits 765 : UINT State Income roll dice count + 4
+    - Bit 43210 : UINT State Income bonus + 7
+00110100.00xxxxxx : CONST
+    - Bits 76543210 : CONST UINT State Taxes
+01000100.00xxxxxx : CONST Base Strength
+    - Bits FEDCBA98 : UINT Base Land Strength
+    - Bits 76543210 : UINT Base Fleet Strength
+01010100.00xxxxxx : CONST Maximum Forces
+    - Bits FEDCBA98 : UINT Maximum Armies
+    - Bits 76543210 : UINT Maximum Fleets
+10010100.00xxxxxx : Flags
+    - Bit 0==1 if Revolt
+11100100.00xxxxxx : Governor
+    - Bits FEDC : UINT Term
+    - Bits BA98.76543210 : Governor Entity ID
+10110100.00xxxxxx : Allied with War
+    - Bits BA98.76543210 : War Entity ID
+11010100.00xxxxxx : Forces
+    - Bits FEDCBA98 : UINT Armies
+    - Bits 76543210 : UINT Fleets
+11110100.00xxxxxx : Rebel Reinforcement
+    - Bits FEDC==0x1 if reinforcement is in transit
+    - Bits FEDC==0xA if reinforcement has been added to the main rebel army
+    - Bits BA98.76543210 : Rebel Entity ID
+
+= DEFAULTS:
+
+00010100.00000000 = 0x0001 : CONST Flags, Cisalpine Gaul
+00010100.00000001 = 0x0001 : CONST Flags, Further Spain
+00010100.00000010 = 0x0001 : CONST Flags, Illyricum
+00010100.00000011 = 0x0001 : CONST Flags, Nearer Spain
+00010100.00000100 = 0x0000 : CONST Flags, Sardinia-Corsica
+00010100.00000101 = 0x0000 : CONST Flags, Sicily
+00010100.00000110 = 0x0000 : CONST Flags, Africa
+00010100.00000111 = 0x0000 : CONST Flags, Asia
+00010100.00001000 = 0x0000 : CONST Flags, Cilicia-Cyprus
+00010100.00001001 = 0x0001 : CONST Flags, Greece
+00010100.00001010 = 0x0000 : CONST Flags, Narbonese Gaul
+00010100.00001011 = 0x0000 : CONST Flags, Bithynia
+00010100.00001100 = 0x0001 : CONST Flags, Crete-Cyrene
+00010100.00001101 = 0x0000 : CONST Flags, Syria
+00010100.00001110 = 0x0001 : CONST Flags, Transalpine Gaul
+00010100.00100000 = 0x0001 : CONST Flags, Cisalpine Gaul
+00010100.00100001 = 0x0001 : CONST Flags, Further Spain
+00010100.00100010 = 0x0001 : CONST Flags, Illyricum
+00010100.00100011 = 0x0001 : CONST Flags, Nearer Spain
+00010100.00100100 = 0x0000 : CONST Flags, Sardinia-Corsica
+00010100.00100101 = 0x0000 : CONST Flags, Sicily
+00010100.00100110 = 0x0000 : CONST Flags, Africa
+00010100.00100111 = 0x0000 : CONST Flags, Asia
+00010100.00101000 = 0x0000 : CONST Flags, Cilicia-Cyprus
+00010100.00101001 = 0x0001 : CONST Flags, Greece
+00010100.00101010 = 0x0000 : CONST Flags, Narbonese Gaul
+00010100.00101011 = 0x0000 : CONST Flags, Bithynia-Pontus
+00010100.00101100 = 0x0001 : CONST Flags, Crete-Cyrene
+00010100.00101101 = 0x0000 : CONST Flags, Syria
+00010100.00101110 = 0x0001 : CONST Flags, Transalpine Gaul
+00010100.00101111 = 0x0000 : CONST Flags, Egypt
+
+00100100.00000000 = 0x5656 : CONST Income, Cisalpine Gaul
+00100100.00000001 = 0x5456 : CONST Income, Further Spain
+00100100.00000010 = 0x5436 : CONST Income, Illyricum
+00100100.00000011 = 0x5538 : CONST Income, Nearer Spain
+00100100.00000100 = 0x5236 : CONST Income, Sardinia-Corsica
+00100100.00000101 = 0x5765 : CONST Income, Sicily
+00100100.00000110 = 0x5663 : CONST Income, Africa
+00100100.00000111 = 0x5964 : CONST Income, Asia
+00100100.00001000 = 0x5337 : CONST Income, Cilicia-Cyprus
+00100100.00001001 = 0x5865 : CONST Income, Greece
+00100100.00001010 = 0x5454 : CONST Income, Narbonese Gaul
+00100100.00001011 = 0x5355 : CONST Income, Bithynia
+00100100.00001100 = 0x5655 : CONST Income, Crete-Cyrene
+00100100.00001101 = 0x5657 : CONST Income, Syria
+00100100.00001110 = 0x5352 : CONST Income, Transalpine Gaul
+00100100.00100000 = 0x5A66 : CONST Income, Cisalpine Gaul
+00100100.00100001 = 0x5656 : CONST Income, Further Spain
+00100100.00100010 = 0x5757 : CONST Income, Illyricum
+00100100.00100011 = 0x5958 : CONST Income, Nearer Spain
+00100100.00100100 = 0x5638 : CONST Income, Sardinia-Corsica
+00100100.00100101 = 0x5B59 : CONST Income, Sicily
+00100100.00100110 = 0x5A58 : CONST Income, Africa
+00100100.00100111 = 0x5D6A : CONST Income, Asia
+00100100.00101000 = 0x573A : CONST Income, Cilicia-Cyprus
+00100100.00101001 = 0x6669 : CONST Income, Greece
+00100100.00101010 = 0x5858 : CONST Income, Narbonese Gaul
+00100100.00101011 = 0x5959 : CONST Income, Bithynia-Pontus
+00100100.00101100 = 0x5859 : CONST Income, Crete-Cyrene
+00100100.00101101 = 0x5A57 : CONST Income, Syria
+00100100.00101110 = 0x5758 : CONST Income, Transalpine Gaul
+00100100.00101111 = 0x5E6A : CONST Income, Egypt
+
+00110100.00000000 = 0x000F : CONST UINT State Taxes, Cisalpine Gaul
+00110100.00000001 = 0x000A : CONST UINT State Taxes, Further Spain
+00110100.00000010 = 0x0005 : CONST UINT State Taxes, Illyricum
+00110100.00000011 = 0x000A : CONST UINT State Taxes, Nearer Spain
+00110100.00000100 = 0x001E : CONST UINT State Taxes, Sardinia-Corsica
+00110100.00000101 = 0x0014 : CONST UINT State Taxes, Sicily
+00110100.00000110 = 0x0023 : CONST UINT State Taxes, Africa
+00110100.00000111 = 0x000A : CONST UINT State Taxes, Asia
+00110100.00001000 = 0x001E : CONST UINT State Taxes, Cilicia-Cyprus
+00110100.00001001 = 0x000A : CONST UINT State Taxes, Greece
+00110100.00001010 = 0x000A : CONST UINT State Taxes, Narbonese Gaul
+00110100.00001011 = 0x000F : CONST UINT State Taxes, Bithynia
+00110100.00001100 = 0x0014 : CONST UINT State Taxes, Crete-Cyrene
+00110100.00001101 = 0x000A : CONST UINT State Taxes, Syria
+00110100.00001110 = 0x000A : CONST UINT State Taxes, Transalpine Gaul
+00110100.00100000 = 0x0014 : CONST UINT State Taxes, Cisalpine Gaul
+00110100.00100001 = 0x000F : CONST UINT State Taxes, Further Spain
+00110100.00100010 = 0x000F : CONST UINT State Taxes, Illyricum
+00110100.00100011 = 0x000A : CONST UINT State Taxes, Nearer Spain
+00110100.00100100 = 0x0028 : CONST UINT State Taxes, Sardinia-Corsica
+00110100.00100101 = 0x001E : CONST UINT State Taxes, Sicily
+00110100.00100110 = 0x0032 : CONST UINT State Taxes, Africa
+00110100.00100111 = 0x0014 : CONST UINT State Taxes, Asia
+00110100.00101000 = 0x0028 : CONST UINT State Taxes, Cilicia-Cyprus
+00110100.00101001 = 0x0014 : CONST UINT State Taxes, Greece
+00110100.00101010 = 0x001E : CONST UINT State Taxes, Narbonese Gaul
+00110100.00101011 = 0x0014 : CONST UINT State Taxes, Bithynia-Pontus
+00110100.00101100 = 0x001E : CONST UINT State Taxes, Crete-Cyrene
+00110100.00101101 = 0x0014 : CONST UINT State Taxes, Syria
+00110100.00101110 = 0x0014 : CONST UINT State Taxes, Transalpine Gaul
+00110100.00101111 = 0x003C : CONST UINT State Taxes, Egypt
+
+01000100.00000000 = 0x0100 : CONST Base Strength, Cisalpine Gaul
+01000100.00000001 = 0x0200 : CONST Base Strength, Further Spain
+01000100.00000010 = 0x0200 : CONST Base Strength, Illyricum
+01000100.00000011 = 0x0100 : CONST Base Strength, Nearer Spain
+01000100.00000100 = 0x0000 : CONST Base Strength, Sardinia-Corsica
+01000100.00000101 = 0x0200 : CONST Base Strength, Sicily
+01000100.00000110 = 0x0305 : CONST Base Strength, Africa
+01000100.00000111 = 0x0605 : CONST Base Strength, Asia
+01000100.00001000 = 0x0205 : CONST Base Strength, Cilicia-Cyprus
+01000100.00001001 = 0x0505 : CONST Base Strength, Greece
+01000100.00001010 = 0x0100 : CONST Base Strength, Narbonese Gaul
+01000100.00001011 = 0x0205 : CONST Base Strength, Bithynia
+01000100.00001100 = 0x0105 : CONST Base Strength, Crete-Cyrene
+01000100.00001101 = 0x0405 : CONST Base Strength, Syria
+01000100.00001110 = 0x0300 : CONST Base Strength, Transalpine Gaul
+01000100.00100000 = 0x0200 : CONST Base Strength, Cisalpine Gaul
+01000100.00100001 = 0x0400 : CONST Base Strength, Further Spain
+01000100.00100010 = 0x0400 : CONST Base Strength, Illyricum
+01000100.00100011 = 0x0200 : CONST Base Strength, Nearer Spain
+01000100.00100100 = 0x0100 : CONST Base Strength, Sardinia-Corsica
+01000100.00100101 = 0x0200 : CONST Base Strength, Sicily
+01000100.00100110 = 0x0405 : CONST Base Strength, Africa
+01000100.00100111 = 0x0605 : CONST Base Strength, Asia
+01000100.00101000 = 0x0305 : CONST Base Strength, Cilicia-Cyprus
+01000100.00101001 = 0x0505 : CONST Base Strength, Greece
+01000100.00101010 = 0x0200 : CONST Base Strength, Narbonese Gaul
+01000100.00101011 = 0x0405 : CONST Base Strength, Bithynia-Pontus
+01000100.00101100 = 0x0205 : CONST Base Strength, Crete-Cyrene
+01000100.00101101 = 0x0405 : CONST Base Strength, Syria
+01000100.00101110 = 0x0600 : CONST Base Strength, Transalpine Gaul
+01000100.00101111 = 0x0307 : CONST Base Strength, Egypt
+
+01010100.00000000 = 0x0500 : CONST Maximum Forces, Cisalpine Gaul
+01010100.00000001 = 0x0500 : CONST Maximum Forces, Further Spain
+01010100.00000010 = 0x0500 : CONST Maximum Forces, Illyricum
+01010100.00000011 = 0x0500 : CONST Maximum Forces, Nearer Spain
+01010100.00000100 = 0x0003 : CONST Maximum Forces, Sardinia-Corsica
+01010100.00000101 = 0x0A05 : CONST Maximum Forces, Sicily
+01010100.00000110 = 0x0503 : CONST Maximum Forces, Africa
+01010100.00000111 = 0x0A0A : CONST Maximum Forces, Asia
+01010100.00001000 = 0x0003 : CONST Maximum Forces, Cilicia-Cyprus
+01010100.00001001 = 0x0A0A : CONST Maximum Forces, Greece
+01010100.00001010 = 0x0500 : CONST Maximum Forces, Narbonese Gaul
+01010100.00001011 = 0x0103 : CONST Maximum Forces, Bithynia
+01010100.00001100 = 0x0505 : CONST Maximum Forces, Crete-Cyrene
+01010100.00001101 = 0x0A0A : CONST Maximum Forces, Syria
+01010100.00001110 = 0x0500 : CONST Maximum Forces, Transalpine Gaul
+01010100.00100000 = 0x0A00 : CONST Maximum Forces, Cisalpine Gaul
+01010100.00100001 = 0x0A00 : CONST Maximum Forces, Further Spain
+01010100.00100010 = 0x0A00 : CONST Maximum Forces, Illyricum
+01010100.00100011 = 0x0A00 : CONST Maximum Forces, Nearer Spain
+01010100.00100100 = 0x0105 : CONST Maximum Forces, Sardinia-Corsica
+01010100.00100101 = 0x0A05 : CONST Maximum Forces, Sicily
+01010100.00100110 = 0x0A05 : CONST Maximum Forces, Africa
+01010100.00100111 = 0x0A0A : CONST Maximum Forces, Asia
+01010100.00101000 = 0x0105 : CONST Maximum Forces, Cilicia-Cyprus
+01010100.00101001 = 0x0A0A : CONST Maximum Forces, Greece
+01010100.00101010 = 0x0A00 : CONST Maximum Forces, Narbonese Gaul
+01010100.00101011 = 0x0A05 : CONST Maximum Forces, Bithynia-Pontus
+01010100.00101100 = 0x0A05 : CONST Maximum Forces, Crete-Cyrene
+01010100.00101101 = 0x0A0A : CONST Maximum Forces, Syria
+01010100.00101110 = 0x0A00 : CONST Maximum Forces, Transalpine Gaul
+01010100.00101111 = 0x080D : CONST Maximum Forces, Egypt
