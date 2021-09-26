@@ -181,24 +181,64 @@ Bits 98 represent red card type:
 
 Note: Gaps were added to make space for extra cards of same kind (house rule).
 
-00001001.00000000 -- 00001001.00010110 : Tribune
-00001001.00100000 -- 00001001.00100110 : Assassin
-00001001.00110000 -- 00001001.00110011 : Influence Peddling
-00001001.01000000 -- 00001001.01000011 : Murder of a Tribune
-00001001.01010000 -- 00001001.01010100 : Secret Bodyguard
+00001001.00000001 : Tribune 1
+00001001.00000010 : Tribune 2
+00001001.00000011 : Tribune 3
+00001001.00000100 : Tribune 4
+00001001.00000101 : Tribune 5
+00001001.00000110 : Tribune 6
+00001001.00000111 : Tribune 7
+00001001.00001000 : Tribune 8
+00001001.00001001 : Tribune 9
+00001001.00001010 : Tribune 10
+00001001.00001011 : Tribune 11
+00001001.00001100 : Tribune 12
+00001001.00001101 : Tribune 13
+00001001.00001110 : Tribune 14
+00001001.00001111 : Tribune 15
+00001001.00010000 : Tribune 16
+00001001.00010001 : Tribune 17
+00001001.00010010 : Tribune 18
+00001001.00010011 : Tribune 19
+00001001.00010100 : Tribune 20
+00001001.00010101 : Tribune 21
+00001001.00010110 : Tribune 22
+00001001.00010111 : Tribune 23
+00001001.00100001 : Assassin 1
+00001001.00100010 : Assassin 2
+00001001.00100011 : Assassin 3
+00001001.00100100 : Assassin 4
+00001001.00100101 : Assassin 5
+00001001.00100110 : Assassin 6
+00001001.00100111 : Assassin 7
+00001001.00110001 : Influence Peddling 1
+00001001.00110010 : Influence Peddling 2
+00001001.00110011 : Influence Peddling 3
+00001001.00110100 : Influence Peddling 4
+00001001.01000001 : Murder of a Tribune 1
+00001001.01000010 : Murder of a Tribune 2
+00001001.01000011 : Murder of a Tribune 3
+00001001.01000100 : Murder of a Tribune 4
+00001001.01010001 : Secret Bodyguard 1
+00001001.01010010 : Secret Bodyguard 2
+00001001.01010011 : Secret Bodyguard 3
+00001001.01010100 : Secret Bodyguard 4
+00001001.01010101 : Secret Bodyguard 5
 00001001.01100000 : Blackmail
-00001001.01101000 -- 00001001.01101001 : Graft
+00001001.01101001 : Graft 1
+00001001.01101010 : Graft 2
 00001001.01111000 : Mob Incited to Violence
 00001001.10000000 : Open Bodyguard
 00001001.10001000 : Proscription
 00001001.10010000 : Seduction
-00001001.10011000 : Cleopatra VII
-00001001.10011001 : Annexation of Egypt
+00001001.10011000 : Cleopatra VII (69 BC – 30 BC)
+00001001.10011001 : Annexation of Egypt (30 BC)
 00001001.10011010 : Appian Way (312 BC – 308 BC)
 00001001.10100000 : Assassination Conspiracy
 00001001.10101000 : Circus Maximus
 00001001.10110000 : Marriage
-00001001.10111000 -- 00001001.10111001 : Scandal
+00001001.10111001 : Scandal 1
+00001001.10111010 : Scandal 2
 00001001.11000000 : Spolia Opima
 00001001.11001000 : Ultimate Decree
 
@@ -222,11 +262,9 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 
 00001011.00000000 : [#xA] Military Leader
 00001011.00000100 : [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
-00001011.00000101 : [#1B] Publius Cornelius Scipio Aemilianus Africanus
-                    Numantinus (185 BC – 129 BC)
+00001011.00000101 : [#1B] Publius Cornelius Scipio Aemilianus Africanus Numantinus (185 BC – 129 BC)
 00001011.00000111 : [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
-00001011.00001000 : [#2A] Quintus Fabius Maximus Verrucosus Cunctator
-                    (c. 280 BC – 203 BC)
+00001011.00001000 : [#2A] Quintus Fabius Maximus Verrucosus Cunctator (c. 280 BC – 203 BC)
 00001011.00010000 : [#4A] Gaius Julius Caesar (100 BC – 44 BC)
 00001011.00010100 : [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
 00001011.00011100 : [#7A] Marcus Fulvius Flaccus (? – 121 BC)
@@ -235,8 +273,7 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001011.00101010 : [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
 00001011.01001000 : [#18A] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
 00001011.01001001 : [#18B] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
-00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus
-                    (c. 229 BC – 166 BC)
+00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
 00001011.01001101 : [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
 00001011.01010100 : [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
 00001011.01011000 : [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
@@ -395,32 +432,32 @@ Note: Numbering follows chronological order.
 
 = FORMAT:
 
-00010100.00xxxxxx : CONST Flags
+00010100.xxxxxxxx : CONST Flags
     - Bit 0==1 if Frontier
-00100100.00xxxxxx : CONST Income
+00100100.xxxxxxxx : CONST Income
     - Bits FED : UINT Personal Income roll dice count + 4
     - Bit CBA98 : UINT Personal Income bonus + 7
     - Bits 765 : UINT State Income roll dice count + 4
     - Bit 43210 : UINT State Income bonus + 7
-00110100.00xxxxxx : CONST
+00110100.xxxxxxxx : CONST
     - Bits 76543210 : CONST UINT State Taxes
-01000100.00xxxxxx : CONST Base Strength
+01000100.xxxxxxxx : CONST Base Strength
     - Bits FEDCBA98 : UINT Base Land Strength
     - Bits 76543210 : UINT Base Fleet Strength
-01010100.00xxxxxx : CONST Maximum Forces
+01010100.xxxxxxxx : CONST Maximum Forces
     - Bits FEDCBA98 : UINT Maximum Armies
     - Bits 76543210 : UINT Maximum Fleets
-10010100.00xxxxxx : Flags
+10010100.xxxxxxxx : Flags
     - Bit 0==1 if Revolt
-11100100.00xxxxxx : Governor
+11100100.xxxxxxxx : Governor
     - Bits FEDC : UINT Term
     - Bits BA98.76543210 : Governor Entity ID
-10110100.00xxxxxx : Allied with War
+10110100.xxxxxxxx : Allied with War
     - Bits BA98.76543210 : War Entity ID
-11010100.00xxxxxx : Forces
+11010100.xxxxxxxx : Forces
     - Bits FEDCBA98 : UINT Armies
     - Bits 76543210 : UINT Fleets
-11110100.00xxxxxx : Rebel Reinforcement
+11110100.xxxxxxxx : Rebel Reinforcement
     - Bits FEDC==0x1 if reinforcement is _in transit_
     - Bits FEDC==0xA if reinforcement has been _added_ to the main rebel army
     - Bits BA98.76543210 : Rebel Entity ID
@@ -588,32 +625,182 @@ Note: Numbering follows chronological order.
 01010100.00101111 = 0x080D : CONST Maximum Forces, Egypt
 
 
+-- Event --
+
+= FORMAT:
+
+00010110.xxxxxxxx : CONST Latin Period TDR
+00100110.xxxxxxxx : CONST Italian Period TDR
+00110110.xxxxxxxx : CONST Early Republic TDR
+01000110.xxxxxxxx : CONST Middle Republic TDR
+01010110.xxxxxxxx : CONST Late Republic TDR
+01100110.xxxxxxxx : CONST Civil War TDR
+
+= DEFAULTS:
+
+00110110.00000100 = 0x0003 : CONST Early Republic TDR, Mob Violence
+00110110.10000100 = 0x0003 : CONST Early Republic TDR, More Mob Violence
+00110110.00010110 = 0x0004 : CONST Early Republic TDR, Natural Disaster
+00110110.10010110 = 0x0004 : CONST Early Republic TDR, Widespread Natural Disaster
+00110110.00010000 = 0x0005 : CONST Early Republic TDR, Ally Deserts
+00110110.10010000 = 0x0005 : CONST Early Republic TDR, Roman Auxiliaries Desert
+00110110.00000010 = 0x0006 : CONST Early Republic TDR, Evil Omens
+00110110.10000010 = 0x0006 : CONST Early Republic TDR, More Evil Omens
+00110110.00100010 = 0x0007 : CONST Early Republic TDR, Refuge
+00110110.10100010 = 0x0007 : CONST Early Republic TDR, Rise from Refuge
+00110110.00000001 = 0x0008 : CONST Early Republic TDR, Epidemic
+00110110.10000001 = 0x0008 : CONST Early Republic TDR, Foreign Epidemic
+00110110.00000000 = 0x0009 : CONST Early Republic TDR, Drought
+00110110.10000000 = 0x0009 : CONST Early Republic TDR, Severe Drought
+00110110.00000010 = 0x000A : CONST Early Republic TDR, Evil Omens
+00110110.10000010 = 0x000A : CONST Early Republic TDR, More Evil Omens
+00110110.00000101 = 0x000B : CONST Early Republic TDR, Storm at Sea
+00110110.10000101 = 0x000B : CONST Early Republic TDR, Another Storm at Sea
+00110110.00000011 = 0x000C : CONST Early Republic TDR, Manpower Shortage
+00110110.10000011 = 0x000C : CONST Early Republic TDR, Extreme Manpower Shortage
+00110110.00010001 = 0x000D : CONST Early Republic TDR, Allied Enthusiasm
+00110110.10010001 = 0x000D : CONST Early Republic TDR, Extreme Allied Enthusiasm
+00110110.00100000 = 0x000E : CONST Early Republic TDR, New Alliance
+00110110.10100000 = 0x000E : CONST Early Republic TDR, Another New Alliance
+00110110.00100011 = 0x000F : CONST Early Republic TDR, Rhodian Maritime Alliance
+00110110.10100011 = 0x000F : CONST Early Republic TDR, Increased Rhodian Involvemnent
+00110110.00010100 = 0x0010 : CONST Early Republic TDR, Enemy's Ally Deserts
+00110110.10010100 = 0x0010 : CONST Early Republic TDR, Enemy Mercenaries Desert
+00110110.00010011 = 0x0011 : CONST Early Republic TDR, Enemy Leader Dies
+00110110.10010011 = 0x0011 : CONST Early Republic TDR, Enemy Sues for Peace
+00110110.00100100 = 0x0012 : CONST Early Republic TDR, Trial of Verres
+00110110.10100100 = 0x0012 : CONST Early Republic TDR, Another Corruption Trial
+
+01000110.00100001 = 0x0003 : CONST Middle Republic TDR, Pretender Emerges
+01000110.10100001 = 0x0003 : CONST Middle Republic TDR, Pretender Victorious
+01000110.00000101 = 0x0004 : CONST Middle Republic TDR, Storm at Sea
+01000110.10000101 = 0x0004 : CONST Middle Republic TDR, Another Storm at Sea
+01000110.00010000 = 0x0005 : CONST Middle Republic TDR, Ally Deserts
+01000110.10010000 = 0x0005 : CONST Middle Republic TDR, Roman Auxiliaries Desert
+01000110.00010110 = 0x0006 : CONST Middle Republic TDR, Natural Disaster
+01000110.10010110 = 0x0006 : CONST Middle Republic TDR, Widespread Natural Disaster
+01000110.00000100 = 0x0007 : CONST Middle Republic TDR, Mob Violence
+01000110.10000100 = 0x0007 : CONST Middle Republic TDR, More Mob Violence
+01000110.00010101 = 0x0008 : CONST Middle Republic TDR, Internal Disorder
+01000110.10010101 = 0x0008 : CONST Middle Republic TDR, Increased Internal Disorder
+01000110.00000000 = 0x0009 : CONST Middle Republic TDR, Drought
+01000110.10000000 = 0x0009 : CONST Middle Republic TDR, Severe Drought
+01000110.00000010 = 0x000A : CONST Middle Republic TDR, Evil Omens
+01000110.10000010 = 0x000A : CONST Middle Republic TDR, More Evil Omens
+01000110.00000001 = 0x000B : CONST Middle Republic TDR, Epidemic
+01000110.10000001 = 0x000B : CONST Middle Republic TDR, Foreign Epidemic
+01000110.00000011 = 0x000C : CONST Middle Republic TDR, Manpower Shortage
+01000110.10000011 = 0x000C : CONST Middle Republic TDR, Extreme Manpower Shortage
+01000110.00010010 = 0x000D : CONST Middle Republic TDR, Barbarian Raids
+01000110.10010010 = 0x000D : CONST Middle Republic TDR, Barbarian Raids Increase
+01000110.00010001 = 0x000E : CONST Middle Republic TDR, Allied Enthusiasm
+01000110.10010001 = 0x000E : CONST Middle Republic TDR, Extreme Allied Enthusiasm
+01000110.00100000 = 0x000F : CONST Middle Republic TDR, New Alliance
+01000110.10100000 = 0x000F : CONST Middle Republic TDR, Another New Alliance
+01000110.00010100 = 0x0010 : CONST Middle Republic TDR, Enemy's Ally Deserts
+01000110.10010100 = 0x0010 : CONST Middle Republic TDR, Enemy Mercenaries Desert
+01000110.00100100 = 0x0011 : CONST Middle Republic TDR, Trial of Verres
+01000110.10100100 = 0x0011 : CONST Middle Republic TDR, Another Corruption Trial
+01000110.00100011 = 0x0012 : CONST Middle Republic TDR, Rhodian Maritime Alliance
+01000110.10100011 = 0x0012 : CONST Middle Republic TDR, Increased Rhodian Involvemnent
+
+01010110.00000001 = 0x0003 : CONST Late Republic TDR, Epidemic
+01010110.10000001 = 0x0003 : CONST Late Republic TDR, Foreign Epidemic
+01010110.00000101 = 0x0004 : CONST Late Republic TDR, Storm at Sea
+01010110.10000101 = 0x0004 : CONST Late Republic TDR, Another Storm at Sea
+01010110.00010000 = 0x0005 : CONST Late Republic TDR, Ally Deserts
+01010110.10010000 = 0x0005 : CONST Late Republic TDR, Roman Auxiliaries Desert
+01010110.00100001 = 0x0006 : CONST Late Republic TDR, Pretender Emerges
+01010110.10100001 = 0x0006 : CONST Late Republic TDR, Pretender Victorious
+01010110.00010110 = 0x0007 : CONST Late Republic TDR, Natural Disaster
+01010110.10010110 = 0x0007 : CONST Late Republic TDR, Widespread Natural Disaster
+01010110.00000100 = 0x0008 : CONST Late Republic TDR, Mob Violence
+01010110.10000100 = 0x0008 : CONST Late Republic TDR, More Mob Violence
+01010110.00000000 = 0x0009 : CONST Late Republic TDR, Drought
+01010110.10000000 = 0x0009 : CONST Late Republic TDR, Severe Drought
+01010110.00000010 = 0x000A : CONST Late Republic TDR, Evil Omens
+01010110.10000010 = 0x000A : CONST Late Republic TDR, More Evil Omens
+01010110.00010101 = 0x000B : CONST Late Republic TDR, Internal Disorder
+01010110.10010101 = 0x000B : CONST Late Republic TDR, Increased Internal Disorder
+01010110.00010010 = 0x000C : CONST Late Republic TDR, Barbarian Raids
+01010110.10010010 = 0x000C : CONST Late Republic TDR, Barbarian Raids Increase
+01010110.00000011 = 0x000D : CONST Late Republic TDR, Manpower Shortage
+01010110.10000011 = 0x000D : CONST Late Republic TDR, Extreme Manpower Shortage
+01010110.00100100 = 0x000E : CONST Late Republic TDR, Trial of Verres
+01010110.10100100 = 0x000E : CONST Late Republic TDR, Another Corruption Trial
+01010110.00010001 = 0x000F : CONST Late Republic TDR, Allied Enthusiasm
+01010110.10010001 = 0x000F : CONST Late Republic TDR, Extreme Allied Enthusiasm
+01010110.00010100 = 0x0010 : CONST Late Republic TDR, Enemy's Ally Deserts
+01010110.10010100 = 0x0010 : CONST Late Republic TDR, Enemy Mercenaries Desert
+01010110.00010011 = 0x0011 : CONST Late Republic TDR, Enemy Leader Dies
+01010110.10010011 = 0x0011 : CONST Late Republic TDR, Enemy Sues for Peace
+01010110.00100000 = 0x0012 : CONST Late Republic TDR, New Alliance
+01010110.10100000 = 0x0012 : CONST Late Republic TDR, Another New Alliance
+
+01100110.10010000 = 0x0003 : CONST Civil War TDR, Roman Auxiliaries Desert
+01100110.00000001 = 0x0004 : CONST Civil War TDR, Epidemic
+01100110.10000001 = 0x0004 : CONST Civil War TDR, Foreign Epidemic
+01100110.00000101 = 0x0005 : CONST Civil War TDR, Storm at Sea
+01100110.10000101 = 0x0005 : CONST Civil War TDR, Another Storm at Sea
+01100110.00010110 = 0x0006 : CONST Civil War TDR, Natural Disaster
+01100110.10010110 = 0x0006 : CONST Civil War TDR, Widespread Natural Disaster
+01100110.00010010 = 0x0007 : CONST Civil War TDR, Barbarian Raids
+01100110.10010010 = 0x0007 : CONST Civil War TDR, Barbarian Raids Increase
+01100110.00010000 = 0x0008 : CONST Civil War TDR, Ally Deserts
+01100110.10010000 = 0x0008 : CONST Civil War TDR, Roman Auxiliaries Desert
+01100110.00000000 = 0x0009 : CONST Civil War TDR, Drought
+01100110.10000000 = 0x0009 : CONST Civil War TDR, Severe Drought
+01100110.00000010 = 0x000A : CONST Civil War TDR, Evil Omens
+01100110.10000010 = 0x000A : CONST Civil War TDR, More Evil Omens
+01100110.00010101 = 0x000B : CONST Civil War TDR, Internal Disorder
+01100110.10010101 = 0x000B : CONST Civil War TDR, Increased Internal Disorder
+01100110.00000100 = 0x000C : CONST Civil War TDR, Mob Violence
+01100110.10000100 = 0x000C : CONST Civil War TDR, More Mob Violence
+01100110.00000011 = 0x000D : CONST Civil War TDR, Manpower Shortage
+01100110.10000011 = 0x000D : CONST Civil War TDR, Extreme Manpower Shortage
+01100110.00010100 = 0x000E : CONST Civil War TDR, Enemy's Ally Deserts
+01100110.10010100 = 0x000E : CONST Civil War TDR, Enemy Mercenaries Desert
+01100110.00100100 = 0x000F : CONST Civil War TDR, Trial of Verres
+01100110.10100100 = 0x000F : CONST Civil War TDR, Another Corruption Trial
+01100110.00010001 = 0x0010 : CONST Civil War TDR, Allied Enthusiasm
+01100110.10010001 = 0x0010 : CONST Civil War TDR, Extreme Allied Enthusiasm
+01100110.00100000 = 0x0011 : CONST Civil War TDR, New Alliance
+01100110.10100000 = 0x0011 : CONST Civil War TDR, Another New Alliance
+01100110.10010100 = 0x0012 : CONST Civil War TDR, Enemy Mercenaries Desert
+
 -- Concession --
 
 = FORMAT:
 
-00011000.00xxxxxx : CONST Flags
+00011000.xxxxxxxx : CONST Main
     - Bits 210 Tax Farmer destroyment value (1.09.611)
     - Bit 4==1 if returns to Forum if depends on the exist of Land Bill(s)
       (1.09.61)
-00101000.00xxxxxx : CONST Income
+00101000.xxxxxxxx : CONST Income
     - Bit D : FLAG BIT income multiplies per drought condition
     - Bits BA98 : Talents immediately per Legion raised
     - Bits 7654 : Talents immediately per Fleet raised
     - Bits 3210 : Talents per turn
-10001000.00xxxxxx : Proposal
+10001000.xxxxxxxx : Visible
+    - Bit 0==1 if visible for Parma faction
+    - Bit 1==1 if visible for Porta faction
+    - Bit 2==1 if visible for Corona faction
+    - Bit 3==1 if visible for Luna Crescens faction
+    - Bit 4==1 if visible for Aquila faction
+    - Bit 5==1 if visible for Manus faction
+10011000.xxxxxxxx : Proposal
     - Bit C==1 if can not be proposed again during current Game Turn (1.09.61)
     - Bits BA98.76543210 : Proposed Senator/Stateman Entity ID
 
 = DEFAULTS:
 
-00011000.00000001 = 0x0001 : CONST Flags, Tax Farmer 1
-00011000.00000010 = 0x0002 : CONST Flags, Tax Farmer 2
-00011000.00000011 = 0x0003 : CONST Flags, Tax Farmer 3
-00011000.00000100 = 0x0004 : CONST Flags, Tax Farmer 4
-00011000.00000101 = 0x0005 : CONST Flags, Tax Farmer 5
-00011000.00000110 = 0x0006 : CONST Flags, Tax Farmer 6
-00011000.01000000 = 0x0010 : CONST Flags, Land Comissioner
+00011000.00000001 = 0x0001 : CONST Main, Tax Farmer 1
+00011000.00000010 = 0x0002 : CONST Main, Tax Farmer 2
+00011000.00000011 = 0x0003 : CONST Main, Tax Farmer 3
+00011000.00000100 = 0x0004 : CONST Main, Tax Farmer 4
+00011000.00000101 = 0x0005 : CONST Main, Tax Farmer 5
+00011000.00000110 = 0x0006 : CONST Main, Tax Farmer 6
+00011000.01000000 = 0x0010 : CONST Main, Land Comissioner
 
 00101000.00000001 = 0x0002 : CONST Income, Tax Farmer 1
 00101000.00000010 = 0x0002 : CONST Income, Tax Farmer 2
@@ -628,3 +815,29 @@ Note: Numbering follows chronological order.
 00101000.01010000 = 0x0003 : CONST Income, Mining
 00101000.01100000 = 0x0030 : CONST Income, Ship Building
 00101000.01110000 = 0x2004 : CONST Income, Sicilian Grain
+
+
+-- Intrigue --
+
+= FORMAT:
+
+10001001.xxxxxxxx : Visible
+    - Bit 0==1 if visible for Parma faction
+    - Bit 1==1 if visible for Porta faction
+    - Bit 2==1 if visible for Corona faction
+    - Bit 3==1 if visible for Luna Crescens faction
+    - Bit 4==1 if visible for Aquila faction
+    - Bit 5==1 if visible for Manus faction
+
+
+-- Law --
+
+= FORMAT:
+
+10001010.xxxxxxxx : Visible
+    - Bit 0==1 if visible for Parma faction
+    - Bit 1==1 if visible for Porta faction
+    - Bit 2==1 if visible for Corona faction
+    - Bit 3==1 if visible for Luna Crescens faction
+    - Bit 4==1 if visible for Aquila faction
+    - Bit 5==1 if visible for Manus faction
