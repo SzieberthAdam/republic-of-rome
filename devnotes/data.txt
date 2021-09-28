@@ -101,53 +101,50 @@ Bit 5 represent undeveloped (0) / developed (1) version.
 
 -- Event --
 
-Bits 76543210 represent Event ID.
-Bit 7 represent gray/front (0) / pink/back (1) version.
+Bits 43210 represent Event ID.
+Bit 5 represent gray/front (0) / pink/back (1) version.
 
-Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
-    Shortages, Storms at Sea, and Mob Violence, any result matching that of a
-    pink event already in play is treated as no further effect but nonetheless
-    prevents the drawing of another Forum/Event card by that player."
-    Hence their lower IDs as there are condition variables defined for these.
+00000110.00000001 : Ally Deserts
+00000110.00000010 : Allied Enthusiasm
+00000110.00000011 : Barbarian Raids
+00000110.00000100 : Drought
+00000110.00000101 : Enemy Leader Dies
+00000110.00000110 : Enemy's Ally Deserts
+00000110.00000111 : Epidemic
+00000110.00001000 : Evil Omens
+00000110.00001001 : Internal Disorder
+00000110.00001010 : Manpower Shortage
+00000110.00001011 : Mob Violence
+00000110.00001100 : Natural Disaster
+00000110.00001101 : New Alliance
+00000110.00001110 : Pretender Emerges
+00000110.00001111 : Refuge
+00000110.00010000 : Rhodian Maritime Alliance
+00000110.00010001 : Storm at Sea
+00000110.00010010 : Trial of Verres
 
-00000110.00000000 : Drought
-00000110.00000001 : Epidemic
-00000110.00000010 : Evil Omens
-00000110.00000011 : Manpower Shortage
-00000110.00000100 : Mob Violence
-00000110.00000101 : Storm at Sea
-00000110.00010000 : Ally Deserts
-00000110.00010001 : Allied Enthusiasm
-00000110.00010010 : Barbarian Raids
-00000110.00010011 : Enemy Leader Dies
-00000110.00010100 : Enemy's Ally Deserts
-00000110.00010101 : Internal Disorder
-00000110.00010110 : Natural Disaster
-00000110.00100000 : New Alliance
-00000110.00100001 : Pretender Emerges
-00000110.00100010 : Refuge
-00000110.00100011 : Rhodian Maritime Alliance
-00000110.00100100 : Trial of Verres
+00000110.00100001 : Roman Auxiliaries Desert
+00000110.00100010 : Extreme Allied Enthusiasm
+00000110.00100011 : Barbarian Raids Increase
+00000110.00100100 : Severe Drought
+00000110.00100101 : Enemy Sues for Peace
+00000110.00100110 : Enemy Mercenaries Desert
+00000110.00100111 : Foreign Epidemic
+00000110.00101000 : More Evil Omens
+00000110.00101001 : Increased Internal Disorder
+00000110.00101010 : Extreme Manpower Shortage
+00000110.00101011 : More Mob Violence
+00000110.00101100 : Widespread Natural Disaster
+00000110.00101101 : Another New Alliance
+00000110.00101110 : Pretender Victorious
+00000110.00101111 : Rise from Refuge
+00000110.00110000 : Increased Rhodian Involvemnent
+00000110.00110001 : Another Storm at Sea
+00000110.00110010 : Another Corruption Trial
 
-00000110.10000000 : Severe Drought
-00000110.10000001 : Foreign Epidemic
-00000110.10000010 : More Evil Omens
-00000110.10000011 : Extreme Manpower Shortage
-00000110.10000100 : More Mob Violence
-00000110.10000101 : Another Storm at Sea
-00000110.10010000 : Roman Auxiliaries Desert
-00000110.10010001 : Extreme Allied Enthusiasm
-00000110.10010010 : Barbarian Raids Increase
-00000110.10010011 : Enemy Sues for Peace
-00000110.10010100 : Enemy Mercenaries Desert
-00000110.10010101 : Increased Internal Disorder
-00000110.10010110 : Widespread Natural Disaster
-00000110.10100000 : Another New Alliance
-00000110.10100001 : Pretender Victorious
-00000110.10100010 : Rise from Refuge
-00000110.10100011 : Increased Rhodian Involvemnent
-00000110.10100100 : Another Corruption Trial
-
+00000110.01001010 : No Recruitment
+00000110.01001011 : Senate Attacked
+00000110.01101011 : People Revolt
 
 
 === red card ===
@@ -271,8 +268,8 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001011.00100000 : [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
 00001011.00101000 : [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
 00001011.00101010 : [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
-00001011.01001000 : [#18A] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
-00001011.01001001 : [#18B] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+00001011.01001000 : [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+00001011.01001001 : [#18B] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
 00001011.01001100 : [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
 00001011.01001101 : [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
 00001011.01010100 : [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
@@ -436,9 +433,9 @@ Note: Numbering follows chronological order.
     - Bit 0==1 if Frontier
 00100100.xxxxxxxx : CONST Income
     - Bits FED : UINT Personal Income roll dice count + 4
-    - Bit CBA98 : UINT Personal Income bonus + 7
+    - Bits CBA98 : UINT Personal Income bonus + 7
     - Bits 765 : UINT State Income roll dice count + 4
-    - Bit 43210 : UINT State Income bonus + 7
+    - Bits 43210 : UINT State Income bonus + 7
 00110100.xxxxxxxx : CONST
     - Bits 76543210 : CONST UINT State Taxes
 01000100.xxxxxxxx : CONST Base Strength
@@ -468,33 +465,16 @@ Note: Numbering follows chronological order.
 00010100.00000001 = 0x0001 : CONST Flags, Further Spain
 00010100.00000010 = 0x0001 : CONST Flags, Illyricum
 00010100.00000011 = 0x0001 : CONST Flags, Nearer Spain
-00010100.00000100 = 0x0000 : CONST Flags, Sardinia-Corsica
-00010100.00000101 = 0x0000 : CONST Flags, Sicily
-00010100.00000110 = 0x0000 : CONST Flags, Africa
-00010100.00000111 = 0x0000 : CONST Flags, Asia
-00010100.00001000 = 0x0000 : CONST Flags, Cilicia-Cyprus
 00010100.00001001 = 0x0001 : CONST Flags, Greece
-00010100.00001010 = 0x0000 : CONST Flags, Narbonese Gaul
-00010100.00001011 = 0x0000 : CONST Flags, Bithynia
 00010100.00001100 = 0x0001 : CONST Flags, Crete-Cyrene
-00010100.00001101 = 0x0000 : CONST Flags, Syria
 00010100.00001110 = 0x0001 : CONST Flags, Transalpine Gaul
 00010100.00100000 = 0x0001 : CONST Flags, Cisalpine Gaul
 00010100.00100001 = 0x0001 : CONST Flags, Further Spain
 00010100.00100010 = 0x0001 : CONST Flags, Illyricum
 00010100.00100011 = 0x0001 : CONST Flags, Nearer Spain
-00010100.00100100 = 0x0000 : CONST Flags, Sardinia-Corsica
-00010100.00100101 = 0x0000 : CONST Flags, Sicily
-00010100.00100110 = 0x0000 : CONST Flags, Africa
-00010100.00100111 = 0x0000 : CONST Flags, Asia
-00010100.00101000 = 0x0000 : CONST Flags, Cilicia-Cyprus
 00010100.00101001 = 0x0001 : CONST Flags, Greece
-00010100.00101010 = 0x0000 : CONST Flags, Narbonese Gaul
-00010100.00101011 = 0x0000 : CONST Flags, Bithynia-Pontus
 00010100.00101100 = 0x0001 : CONST Flags, Crete-Cyrene
-00010100.00101101 = 0x0000 : CONST Flags, Syria
 00010100.00101110 = 0x0001 : CONST Flags, Transalpine Gaul
-00010100.00101111 = 0x0000 : CONST Flags, Egypt
 
 00100100.00000000 = 0x5656 : CONST Income, Cisalpine Gaul
 00100100.00000001 = 0x5456 : CONST Income, Further Spain
@@ -629,144 +609,33 @@ Note: Numbering follows chronological order.
 
 = FORMAT:
 
-00010110.xxxxxxxx : CONST Latin Period TDR
-00100110.xxxxxxxx : CONST Italian Period TDR
-00110110.xxxxxxxx : CONST Early Republic TDR
-01000110.xxxxxxxx : CONST Middle Republic TDR
-01010110.xxxxxxxx : CONST Late Republic TDR
-01100110.xxxxxxxx : CONST Civil War TDR
+00010110.00xxxxxx : CONST Flags
+    - Bit C==1 if Cumulative
+00100110.00xxxxxx : CONST Target Value 1 ID
+00110110.00xxxxxx : CONST INT Target Value 1 Difference
+01000110.00xxxxxx : CONST Target Value 2 ID
+01010110.00xxxxxx : CONST INT Target Value 2 Difference
+01100110.00xxxxxx : CONST Target Value 3 ID
+01110110.00xxxxxx : CONST INT Target Value 3 Difference
+10010110.00xxxxxx :
+    - Bits FEDC : UINT Forum Phase Counter
+    - Bit 0==1 if Active
 
 = DEFAULTS:
 
-00110110.00000100 = 0x0003 : CONST Early Republic TDR, Mob Violence
-00110110.10000100 = 0x0003 : CONST Early Republic TDR, More Mob Violence
-00110110.00010110 = 0x0004 : CONST Early Republic TDR, Natural Disaster
-00110110.10010110 = 0x0004 : CONST Early Republic TDR, Widespread Natural Disaster
-00110110.00010000 = 0x0005 : CONST Early Republic TDR, Ally Deserts
-00110110.10010000 = 0x0005 : CONST Early Republic TDR, Roman Auxiliaries Desert
-00110110.00000010 = 0x0006 : CONST Early Republic TDR, Evil Omens
-00110110.10000010 = 0x0006 : CONST Early Republic TDR, More Evil Omens
-00110110.00100010 = 0x0007 : CONST Early Republic TDR, Refuge
-00110110.10100010 = 0x0007 : CONST Early Republic TDR, Rise from Refuge
-00110110.00000001 = 0x0008 : CONST Early Republic TDR, Epidemic
-00110110.10000001 = 0x0008 : CONST Early Republic TDR, Foreign Epidemic
-00110110.00000000 = 0x0009 : CONST Early Republic TDR, Drought
-00110110.10000000 = 0x0009 : CONST Early Republic TDR, Severe Drought
-00110110.00000010 = 0x000A : CONST Early Republic TDR, Evil Omens
-00110110.10000010 = 0x000A : CONST Early Republic TDR, More Evil Omens
-00110110.00000101 = 0x000B : CONST Early Republic TDR, Storm at Sea
-00110110.10000101 = 0x000B : CONST Early Republic TDR, Another Storm at Sea
-00110110.00000011 = 0x000C : CONST Early Republic TDR, Manpower Shortage
-00110110.10000011 = 0x000C : CONST Early Republic TDR, Extreme Manpower Shortage
-00110110.00010001 = 0x000D : CONST Early Republic TDR, Allied Enthusiasm
-00110110.10010001 = 0x000D : CONST Early Republic TDR, Extreme Allied Enthusiasm
-00110110.00100000 = 0x000E : CONST Early Republic TDR, New Alliance
-00110110.10100000 = 0x000E : CONST Early Republic TDR, Another New Alliance
-00110110.00100011 = 0x000F : CONST Early Republic TDR, Rhodian Maritime Alliance
-00110110.10100011 = 0x000F : CONST Early Republic TDR, Increased Rhodian Involvemnent
-00110110.00010100 = 0x0010 : CONST Early Republic TDR, Enemy's Ally Deserts
-00110110.10010100 = 0x0010 : CONST Early Republic TDR, Enemy Mercenaries Desert
-00110110.00010011 = 0x0011 : CONST Early Republic TDR, Enemy Leader Dies
-00110110.10010011 = 0x0011 : CONST Early Republic TDR, Enemy Sues for Peace
-00110110.00100100 = 0x0012 : CONST Early Republic TDR, Trial of Verres
-00110110.10100100 = 0x0012 : CONST Early Republic TDR, Another Corruption Trial
+Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
+    Shortages, Storms at Sea, and Mob Violence, any result matching that of a
+    pink event already in play is treated as no further effect but nonetheless
+    prevents the drawing of another Forum/Event card by that player."
 
-01000110.00100001 = 0x0003 : CONST Middle Republic TDR, Pretender Emerges
-01000110.10100001 = 0x0003 : CONST Middle Republic TDR, Pretender Victorious
-01000110.00000101 = 0x0004 : CONST Middle Republic TDR, Storm at Sea
-01000110.10000101 = 0x0004 : CONST Middle Republic TDR, Another Storm at Sea
-01000110.00010000 = 0x0005 : CONST Middle Republic TDR, Ally Deserts
-01000110.10010000 = 0x0005 : CONST Middle Republic TDR, Roman Auxiliaries Desert
-01000110.00010110 = 0x0006 : CONST Middle Republic TDR, Natural Disaster
-01000110.10010110 = 0x0006 : CONST Middle Republic TDR, Widespread Natural Disaster
-01000110.00000100 = 0x0007 : CONST Middle Republic TDR, Mob Violence
-01000110.10000100 = 0x0007 : CONST Middle Republic TDR, More Mob Violence
-01000110.00010101 = 0x0008 : CONST Middle Republic TDR, Internal Disorder
-01000110.10010101 = 0x0008 : CONST Middle Republic TDR, Increased Internal Disorder
-01000110.00000000 = 0x0009 : CONST Middle Republic TDR, Drought
-01000110.10000000 = 0x0009 : CONST Middle Republic TDR, Severe Drought
-01000110.00000010 = 0x000A : CONST Middle Republic TDR, Evil Omens
-01000110.10000010 = 0x000A : CONST Middle Republic TDR, More Evil Omens
-01000110.00000001 = 0x000B : CONST Middle Republic TDR, Epidemic
-01000110.10000001 = 0x000B : CONST Middle Republic TDR, Foreign Epidemic
-01000110.00000011 = 0x000C : CONST Middle Republic TDR, Manpower Shortage
-01000110.10000011 = 0x000C : CONST Middle Republic TDR, Extreme Manpower Shortage
-01000110.00010010 = 0x000D : CONST Middle Republic TDR, Barbarian Raids
-01000110.10010010 = 0x000D : CONST Middle Republic TDR, Barbarian Raids Increase
-01000110.00010001 = 0x000E : CONST Middle Republic TDR, Allied Enthusiasm
-01000110.10010001 = 0x000E : CONST Middle Republic TDR, Extreme Allied Enthusiasm
-01000110.00100000 = 0x000F : CONST Middle Republic TDR, New Alliance
-01000110.10100000 = 0x000F : CONST Middle Republic TDR, Another New Alliance
-01000110.00010100 = 0x0010 : CONST Middle Republic TDR, Enemy's Ally Deserts
-01000110.10010100 = 0x0010 : CONST Middle Republic TDR, Enemy Mercenaries Desert
-01000110.00100100 = 0x0011 : CONST Middle Republic TDR, Trial of Verres
-01000110.10100100 = 0x0011 : CONST Middle Republic TDR, Another Corruption Trial
-01000110.00100011 = 0x0012 : CONST Middle Republic TDR, Rhodian Maritime Alliance
-01000110.10100011 = 0x0012 : CONST Middle Republic TDR, Increased Rhodian Involvemnent
+00010110.00100100 = 0x1000 : Severe Drought
+00010110.00100111 = 0x1000 : Foreign Epidemic
+00010110.00101000 = 0x1000 : More Evil Omens
+00010110.00101010 = 0x1000 : Extreme Manpower Shortage
+00010110.00101011 = 0x1000 : More Mob Violence
 
-01010110.00000001 = 0x0003 : CONST Late Republic TDR, Epidemic
-01010110.10000001 = 0x0003 : CONST Late Republic TDR, Foreign Epidemic
-01010110.00000101 = 0x0004 : CONST Late Republic TDR, Storm at Sea
-01010110.10000101 = 0x0004 : CONST Late Republic TDR, Another Storm at Sea
-01010110.00010000 = 0x0005 : CONST Late Republic TDR, Ally Deserts
-01010110.10010000 = 0x0005 : CONST Late Republic TDR, Roman Auxiliaries Desert
-01010110.00100001 = 0x0006 : CONST Late Republic TDR, Pretender Emerges
-01010110.10100001 = 0x0006 : CONST Late Republic TDR, Pretender Victorious
-01010110.00010110 = 0x0007 : CONST Late Republic TDR, Natural Disaster
-01010110.10010110 = 0x0007 : CONST Late Republic TDR, Widespread Natural Disaster
-01010110.00000100 = 0x0008 : CONST Late Republic TDR, Mob Violence
-01010110.10000100 = 0x0008 : CONST Late Republic TDR, More Mob Violence
-01010110.00000000 = 0x0009 : CONST Late Republic TDR, Drought
-01010110.10000000 = 0x0009 : CONST Late Republic TDR, Severe Drought
-01010110.00000010 = 0x000A : CONST Late Republic TDR, Evil Omens
-01010110.10000010 = 0x000A : CONST Late Republic TDR, More Evil Omens
-01010110.00010101 = 0x000B : CONST Late Republic TDR, Internal Disorder
-01010110.10010101 = 0x000B : CONST Late Republic TDR, Increased Internal Disorder
-01010110.00010010 = 0x000C : CONST Late Republic TDR, Barbarian Raids
-01010110.10010010 = 0x000C : CONST Late Republic TDR, Barbarian Raids Increase
-01010110.00000011 = 0x000D : CONST Late Republic TDR, Manpower Shortage
-01010110.10000011 = 0x000D : CONST Late Republic TDR, Extreme Manpower Shortage
-01010110.00100100 = 0x000E : CONST Late Republic TDR, Trial of Verres
-01010110.10100100 = 0x000E : CONST Late Republic TDR, Another Corruption Trial
-01010110.00010001 = 0x000F : CONST Late Republic TDR, Allied Enthusiasm
-01010110.10010001 = 0x000F : CONST Late Republic TDR, Extreme Allied Enthusiasm
-01010110.00010100 = 0x0010 : CONST Late Republic TDR, Enemy's Ally Deserts
-01010110.10010100 = 0x0010 : CONST Late Republic TDR, Enemy Mercenaries Desert
-01010110.00010011 = 0x0011 : CONST Late Republic TDR, Enemy Leader Dies
-01010110.10010011 = 0x0011 : CONST Late Republic TDR, Enemy Sues for Peace
-01010110.00100000 = 0x0012 : CONST Late Republic TDR, New Alliance
-01010110.10100000 = 0x0012 : CONST Late Republic TDR, Another New Alliance
+# TODO
 
-01100110.10010000 = 0x0003 : CONST Civil War TDR, Roman Auxiliaries Desert
-01100110.00000001 = 0x0004 : CONST Civil War TDR, Epidemic
-01100110.10000001 = 0x0004 : CONST Civil War TDR, Foreign Epidemic
-01100110.00000101 = 0x0005 : CONST Civil War TDR, Storm at Sea
-01100110.10000101 = 0x0005 : CONST Civil War TDR, Another Storm at Sea
-01100110.00010110 = 0x0006 : CONST Civil War TDR, Natural Disaster
-01100110.10010110 = 0x0006 : CONST Civil War TDR, Widespread Natural Disaster
-01100110.00010010 = 0x0007 : CONST Civil War TDR, Barbarian Raids
-01100110.10010010 = 0x0007 : CONST Civil War TDR, Barbarian Raids Increase
-01100110.00010000 = 0x0008 : CONST Civil War TDR, Ally Deserts
-01100110.10010000 = 0x0008 : CONST Civil War TDR, Roman Auxiliaries Desert
-01100110.00000000 = 0x0009 : CONST Civil War TDR, Drought
-01100110.10000000 = 0x0009 : CONST Civil War TDR, Severe Drought
-01100110.00000010 = 0x000A : CONST Civil War TDR, Evil Omens
-01100110.10000010 = 0x000A : CONST Civil War TDR, More Evil Omens
-01100110.00010101 = 0x000B : CONST Civil War TDR, Internal Disorder
-01100110.10010101 = 0x000B : CONST Civil War TDR, Increased Internal Disorder
-01100110.00000100 = 0x000C : CONST Civil War TDR, Mob Violence
-01100110.10000100 = 0x000C : CONST Civil War TDR, More Mob Violence
-01100110.00000011 = 0x000D : CONST Civil War TDR, Manpower Shortage
-01100110.10000011 = 0x000D : CONST Civil War TDR, Extreme Manpower Shortage
-01100110.00010100 = 0x000E : CONST Civil War TDR, Enemy's Ally Deserts
-01100110.10010100 = 0x000E : CONST Civil War TDR, Enemy Mercenaries Desert
-01100110.00100100 = 0x000F : CONST Civil War TDR, Trial of Verres
-01100110.10100100 = 0x000F : CONST Civil War TDR, Another Corruption Trial
-01100110.00010001 = 0x0010 : CONST Civil War TDR, Allied Enthusiasm
-01100110.10010001 = 0x0010 : CONST Civil War TDR, Extreme Allied Enthusiasm
-01100110.00100000 = 0x0011 : CONST Civil War TDR, New Alliance
-01100110.10100000 = 0x0011 : CONST Civil War TDR, Another New Alliance
-01100110.10010100 = 0x0012 : CONST Civil War TDR, Enemy Mercenaries Desert
 
 -- Concession --
 
@@ -781,16 +650,16 @@ Note: Numbering follows chronological order.
     - Bits BA98 : Talents immediately per Legion raised
     - Bits 7654 : Talents immediately per Fleet raised
     - Bits 3210 : Talents per turn
-10001000.xxxxxxxx : Visible
+10011000.xxxxxxxx : Proposal
+    - Bit C==1 if can not be proposed again during current Game Turn (1.09.61)
+    - Bits BA98.76543210 : Proposed Senator/Stateman Entity ID
+11111000.xxxxxxxx : Visible
     - Bit 0==1 if visible for Parma faction
     - Bit 1==1 if visible for Porta faction
     - Bit 2==1 if visible for Corona faction
     - Bit 3==1 if visible for Luna Crescens faction
     - Bit 4==1 if visible for Aquila faction
     - Bit 5==1 if visible for Manus faction
-10011000.xxxxxxxx : Proposal
-    - Bit C==1 if can not be proposed again during current Game Turn (1.09.61)
-    - Bits BA98.76543210 : Proposed Senator/Stateman Entity ID
 
 = DEFAULTS:
 
@@ -821,7 +690,7 @@ Note: Numbering follows chronological order.
 
 = FORMAT:
 
-10001001.xxxxxxxx : Visible
+11111001.xxxxxxxx : Visible
     - Bit 0==1 if visible for Parma faction
     - Bit 1==1 if visible for Porta faction
     - Bit 2==1 if visible for Corona faction
@@ -834,10 +703,200 @@ Note: Numbering follows chronological order.
 
 = FORMAT:
 
-10001010.xxxxxxxx : Visible
+11111010.xxxxxxxx : Visible
     - Bit 0==1 if visible for Parma faction
     - Bit 1==1 if visible for Porta faction
     - Bit 2==1 if visible for Corona faction
     - Bit 3==1 if visible for Luna Crescens faction
     - Bit 4==1 if visible for Aquila faction
     - Bit 5==1 if visible for Manus faction
+
+
+-- Statesman --
+
+00010100.xxxxxxxx : CONST Flags 1 & Era
+    - Bit 0==1 if Halves all losses in Combat unless Master of Horse (Fractions round up.)
+    - Bit 1==1 if 1 Free Tribune per Year
+    - Bit 2==1 if May claim unheld Land Commissioner Office once without vote.
+    - Bit 3==1 if Mob Orator; May roll three dice if making Popular Appeal.
+    - Bit 4==1 if May veto one Land Bill per Turn without using a Tribune card.
+    - Bit 5==1 if May propose 1 Land Bill/Year.
+    - Bit 6==1 if +1 drm to Knight dr.
+    - Bit 7==1 if Makes 2 Veteran Legions for each Victory even as Governor.
+    - Bit 8==1 if Doubles all personal and assigned income.
+    - Bit 9==1 if If Disaster/Standoff: losses are voided but War is not Prosecuted & Statesman must be Recalled.
+    - Bit A==1 if Popularity gains/losses are doubled.
+    - Bit B==1 if Military skill rolled before each battle.
+    - Bits EDC : Era
+00100100.xxxxxxxx : CONST Flags 2
+    - Bit 0==1 if When played, one random unaligned Veteran becomes aligned to Statesman. If there are no unaligned veterans Statesman does not get one.
+    - Bit 1==1 if +2 vs Naval Battles
+    - Bit 2==1 if +2 to Population Rolls
+    - Bit 3==1 if May propose 1 Land Bill/Year even before Agrarian Unrest
+    - Bit 4==1 if Can be assigned to any senator currently without a Statesman; gives that senator +2 Military rating (Maximum of 5).
+    - Bit 5==1 if Discard during the first Revolution Phase of Early Republic.
+00110100.xxxxxxxx : CONST Initial Ratings
+    - Bits FED : Military
+    - Bits CBA : Oratory
+    - Bits 9876 : Loyalty
+    - Bits 543 : Initial Influence
+    - Bits 210 : Initial Popularity
+01000100.xxxxxxxx : CONST Voids Disaster/Standoff of Wars 1 & 2
+    - Bit F==1 if Voids Disaster/Standoff of War 1 Naval Battle
+    - Bit E==1 if Voids Disaster/Standoff of War 1 Land Battle
+    - Bits DCBA98 : War 1 Entity ID
+    - Bit 7==1 if Voids Disaster/Standoff of War 2 Naval Battle
+    - Bit 6==1 if Voids Disaster/Standoff of War 2 Land Battle
+    - Bits 543210 : War 2 Entity ID
+01010100.xxxxxxxx : CONST Voids Disaster/Standoff of Wars 3 & 4
+    - Bit F==1 if Voids Disaster/Standoff of War 3 Naval Battle
+    - Bit E==1 if Voids Disaster/Standoff of War 3 Land Battle
+    - Bits DCBA98 : War 3 Entity ID
+    - Bit 7==1 if Voids Disaster/Standoff of War 4 Naval Battle
+    - Bit 6==1 if Voids Disaster/Standoff of War 4 Land Battle
+    - Bits 543210 : War 4 Entity ID
+01100100.xxxxxxxx : CONST Loyalty 0 Condition 1 & 2
+    - Bits FEDCBA98 : Loyalty 0 if with Statesman 1; Statesman 1 Entity ID
+    - Bits 76543210 : Loyalty 0 if with Statesman 2; Statesman 2 Entity ID
+01110100.xxxxxxxx : CONST Loyalty 0 Condition 3 & 4
+    - Bits FEDCBA98 : Loyalty 0 if with Statesman 3; Statesman 3 Entity ID
+    - Bits 76543210 : Loyalty 0 if NOT with Statesman 4; Statesman 4 Entity ID
+10000100.xxxxxxxx : CONST Playability
+    - Bit 2==1 if Can be Played with Statesman 5 (Entity ID Bits 765432 must be equal)
+    - Bits 10 : Statesman 5 Entity ID Bits 10
+10010100.xxxxxxxx : Flags
+    - Bit 0==1 if Prior Consul
+    - Bit 1==1 if Priest
+    - Bit 2==1 if Corrupt
+    - Bit 3==1 if Exile
+    - Bit 8==1 if Cannot be played unless there are less than 6 remaining in the Italian Deck.
+    - Bit E==1 if Secondary Rebel
+    - Bit F==1 if Main Rebel
+10100100.xxxxxxxx : Ratings
+    - Bits FEDCBA98 : UINT Influence
+    - Bits 43210 : UINT Popularity + 9
+10110100.xxxxxxxx : UINT Knights
+11000100.xxxxxxxx : Captive
+    - Bits FEDCBA98 : Captive by War; War Entity ID
+11111010.xxxxxxxx : Visible / Alignment
+    - Bit 0==1 if visible for Parma faction
+    - Bit 1==1 if visible for Porta faction
+    - Bit 2==1 if visible for Corona faction
+    - Bit 3==1 if visible for Luna Crescens faction
+    - Bit 4==1 if visible for Aquila faction
+    - Bit 5==1 if visible for Manus faction
+    - Bits A98 : Faction Nr
+
+= DEFAULTS:
+
+00010100.00000000 = 0x1000 : CONST Flags 1 & Era, [#xA] Military Leader
+00010100.00000100 = 0x3000 : CONST Flags 1 & Era, [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
+00010100.00000101 = 0x4000 : CONST Flags 1 & Era, [#1B] Publius Cornelius Scipio Aemilianus Africanus Numantinus (185 BC – 129 BC)
+00010100.00000111 = 0x4000 : CONST Flags 1 & Era, [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
+00010100.00001000 = 0x3001 : CONST Flags 1 & Era, [#2A] Quintus Fabius Maximus Verrucosus Cunctator (c. 280 BC – 203 BC)
+00010100.00010000 = 0x5080 : CONST Flags 1 & Era, [#4A] Gaius Julius Caesar (100 BC – 44 BC)
+00010100.00010100 = 0x1000 : CONST Flags 1 & Era, [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
+00010100.00011100 = 0x4004 : CONST Flags 1 & Era, [#7A] Marcus Fulvius Flaccus (? – 121 BC)
+00010100.00100000 = 0x1000 : CONST Flags 1 & Era, [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
+00010100.00101000 = 0x1000 : CONST Flags 1 & Era, [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
+00010100.00101010 = 0x2000 : CONST Flags 1 & Era, [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
+00010100.01001000 = 0x3000 : CONST Flags 1 & Era, [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+00010100.01001001 = 0x1000 : CONST Flags 1 & Era, [#18B] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
+00010100.01001100 = 0x3000 : CONST Flags 1 & Era, [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
+00010100.01001101 = 0x6000 : CONST Flags 1 & Era, [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
+00010100.01010100 = 0x4008 : CONST Flags 1 & Era, [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
+00010100.01011000 = 0x3002 : CONST Flags 1 & Era, [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
+00010100.01011001 = 0x5002 : CONST Flags 1 & Era, [#22B] Marcus Porcius Cato Uticensis (95 BC – 46 BC)
+00010100.01011100 = 0x4010 : CONST Flags 1 & Era, [#23A] Publius Popillius Laenas (2nd century BC)
+00010100.01100000 = 0x1000 : CONST Flags 1 & Era, [#24A] Spurius Cassius Viscellinus (5th century BC)
+00010100.01100100 = 0x4020 : CONST Flags 1 & Era, [#25A] Tiberius Sempronius Gracchus (c. 166 BC – 133 BC)
+00010100.01100101 = 0x4020 : CONST Flags 1 & Era, [#25B] Gaius Sempronius Gracchus (c. 154 BC – 121 BC)
+00010100.01101000 = 0x6002 : CONST Flags 1 & Era, [#26A] Gaius Octavius Thurinus (63 BC – 14 BC)
+00010100.01101100 = 0x4040 : CONST Flags 1 & Era, [#27A] Gaius Marius (157 BC – 86 BC)
+00010100.01110000 = 0x5002 : CONST Flags 1 & Era, [#28A] Marcus Tullius Cicero (106 BC – 43 BC)
+00010100.01110100 = 0x5100 : CONST Flags 1 & Era, [#29A] Marcus Licinius Crassus (c. 115 BC – 53 BC)
+00010100.01110101 = 0x5200 : CONST Flags 1 & Era, [#29B] Lucius Licinius Lucullus (c. 117 BC – 57/56 BC)
+00010100.01111000 = 0x5C00 : CONST Flags 1 & Era, [#30A] Gnaeus Pompeius Magnus (c. 106 BC – 48 BC)
+00010100.10000000 = 0x6000 : CONST Flags 1 & Era, [#32A] Marcus Antonius (83 BC – 30 BC)
+
+00100100.00000000 = 0x0030 : CONST Flags 2, [#xA] Military Leader
+00100100.00010100 = 0x0024 : CONST Flags 2, [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
+00100100.00100000 = 0x0020 : CONST Flags 2, [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
+00100100.00101000 = 0x0020 : CONST Flags 2, [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
+00100100.01001001 = 0x0020 : CONST Flags 2, [#18B] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
+00100100.01001101 = 0x0001 : CONST Flags 2, [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
+00100100.01100000 = 0x0028 : CONST Flags 2, [#24A] Spurius Cassius Viscellinus (5th century BC)
+00100100.01101000 = 0x0002 : CONST Flags 2, [#26A] Gaius Octavius Thurinus (63 BC – 14 BC)
+00100100.10000000 = 0x0001 : CONST Flags 2, [#32A] Marcus Antonius (83 BC – 30 BC)
+
+00110100.00000000 = 0x4000 : CONST Initial Ratings, [#xA] Military Leader
+00110100.00000100 = 0xB5F0 : CONST Initial Ratings, [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
+00110100.00000101 = 0x8DE8 : CONST Initial Ratings, [#1B] Publius Cornelius Scipio Aemilianus Africanus Numantinus (185 BC – 129 BC)
+00110100.00000111 = 0x9168 : CONST Initial Ratings, [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
+00110100.00001000 = 0xA9D8 : CONST Initial Ratings, [#2A] Quintus Fabius Maximus Verrucosus Cunctator (c. 280 BC – 203 BC)
+00110100.00010000 = 0xD66A : CONST Initial Ratings, [#4A] Gaius Julius Caesar (100 BC – 44 BC)
+00110100.00010100 = 0x3668 : CONST Initial Ratings, [#5A] Appius Claudius Caecus (c. 340 BC – 273 BC)
+00110100.00011100 = 0x55A8 : CONST Initial Ratings, [#7A] Marcus Fulvius Flaccus (? – 121 BC)
+00110100.00100000 = 0xAE28 : CONST Initial Ratings, [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
+00110100.00101000 = 0x8E79 : CONST Initial Ratings, [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
+00110100.00101010 = 0x8A20 : CONST Initial Ratings, [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
+00110100.01001000 = 0xB1E0 : CONST Initial Ratings, [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+00110100.01001001 = 0xAA49 : CONST Initial Ratings, [#18B] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
+00110100.01001100 = 0xB220 : CONST Initial Ratings, [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
+00110100.01001101 = 0x8A20 : CONST Initial Ratings, [#19B] Marcus Aemilius Lepidus (88/89 BC – 13/12 BC)
+00110100.01010100 = 0x2CD0 : CONST Initial Ratings, [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
+00110100.01011000 = 0x3A88 : CONST Initial Ratings, [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
+00110100.01011001 = 0x3AE0 : CONST Initial Ratings, [#22B] Marcus Porcius Cato Uticensis (95 BC – 46 BC)
+00110100.01011100 = 0x55A0 : CONST Initial Ratings, [#23A] Publius Popillius Laenas (2nd century BC)
+00110100.01100000 = 0x7198 : CONST Initial Ratings, [#24A] Spurius Cassius Viscellinus (5th century BC)
+00110100.01100100 = 0x319A : CONST Initial Ratings, [#25A] Tiberius Sempronius Gracchus (c. 166 BC – 133 BC)
+00110100.01100101 = 0x35A3 : CONST Initial Ratings, [#25B] Gaius Sempronius Gracchus (c. 154 BC – 121 BC)
+00110100.01101000 = 0x76A9 : CONST Initial Ratings, [#26A] Gaius Octavius Thurinus (63 BC – 14 BC)
+00110100.01101100 = 0xADA8 : CONST Initial Ratings, [#27A] Gaius Marius (157 BC – 86 BC)
+00110100.01110000 = 0x3A99 : CONST Initial Ratings, [#28A] Marcus Tullius Cicero (106 BC – 43 BC)
+00110100.01110100 = 0x4928 : CONST Initial Ratings, [#29A] Marcus Licinius Crassus (c. 115 BC – 53 BC)
+00110100.01110101 = 0xAE9B : CONST Initial Ratings, [#29B] Lucius Licinius Lucullus (c. 117 BC – 57/56 BC)
+00110100.01111000 = 0x2E6D : CONST Initial Ratings, [#30A] Gnaeus Pompeius Magnus (c. 106 BC – 48 BC)
+00110100.10000000 = 0xA9A9 : CONST Initial Ratings, [#32A] Marcus Antonius (83 BC – 30 BC)
+
+01000100.00000100 = 0xCCD0 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
+01000100.00000101 = 0xD5D6 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#1B] Publius Cornelius Scipio Aemilianus Africanus Numantinus (185 BC – 129 BC)
+01000100.00000111 = 0xDEDF : CONST Voids Disaster/Standoff of Wars 1 & 2, [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
+01000100.00100000 = 0xC4C5 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#8A] Marcus Furius Camillus (c. 446 BC – 365 BC)
+01000100.00101000 = 0xC100 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#10A] Lucius Junius Brutus (c. 545 BC – c. 509 BC)
+01000100.00101010 = 0x8C00 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#12A] Marcus Atilius Regulus (before 307 BC – 250 BC)
+01000100.01001000 = 0xD1D2 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+01000100.01001001 = 0xC2C3 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#18B] Lucius Quinctius Cincinnatus (519 BC – 438 BC)
+01000100.01001100 = 0xD1D2 : CONST Voids Disaster/Standoff of Wars 1 & 2, [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
+01000100.01101100 = 0xDBDE : CONST Voids Disaster/Standoff of Wars 1 & 2, [#27A] Gaius Marius (157 BC – 86 BC)
+
+01010100.00000100 = 0xD600 : CONST Voids Disaster/Standoff of Wars 3 & 4, [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
+01010100.00000111 = 0xE0E2 : CONST Voids Disaster/Standoff of Wars 3 & 4, [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
+01010100.01001000 = 0xD4D7 : CONST Voids Disaster/Standoff of Wars 3 & 4, [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+01010100.01001100 = 0xD4D7 : CONST Voids Disaster/Standoff of Wars 3 & 4, [#19A] Lucius Aemilius Paullus Macedonicus (c. 229 BC – 166 BC)
+
+01100100.00000100 = 0x5800 : CONST Loyalty 0 Condition 1 & 2, [#1A] Publius Cornelius Scipio Africanus (235 BC – 183 BC)
+01100100.00000111 = 0x6C00 : CONST Loyalty 0 Condition 1 & 2, [#1C] Lucius Cornelius Sulla Felix (c. 138 BC – 78 BC)
+01100100.00010000 = 0x5900 : CONST Loyalty 0 Condition 1 & 2, [#4A] Gaius Julius Caesar (100 BC – 44 BC)
+01100100.00011100 = 0x5C00 : CONST Loyalty 0 Condition 1 & 2, [#7A] Marcus Fulvius Flaccus (? – 121 BC)
+01100100.01001000 = 0x5800 : CONST Loyalty 0 Condition 1 & 2, [#18A] Titus Quinctius Flamininus (c. 229 BC – 174 BC)
+01100100.01010100 = 0x0700 : CONST Loyalty 0 Condition 1 & 2, [#21A] Gaius Servilius Glaucia (c. 142 BC – 99 BC)
+01100100.01011000 = 0x0405 : CONST Loyalty 0 Condition 1 & 2, [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
+01100100.01011001 = 0x1000 : CONST Loyalty 0 Condition 1 & 2, [#22B] Marcus Porcius Cato Uticensis (95 BC – 46 BC)
+01100100.01011100 = 0x1C64 : CONST Loyalty 0 Condition 1 & 2, [#23A] Publius Popillius Laenas (2nd century BC)
+01100100.01101000 = 0x8000 : CONST Loyalty 0 Condition 1 & 2, [#26A] Gaius Octavius Thurinus (63 BC – 14 BC)
+01100100.01101100 = 0x0700 : CONST Loyalty 0 Condition 1 & 2, [#27A] Gaius Marius (157 BC – 86 BC)
+01100100.01110100 = 0x7800 : CONST Loyalty 0 Condition 1 & 2, [#29A] Marcus Licinius Crassus (c. 115 BC – 53 BC)
+01100100.01110101 = 0x7800 : CONST Loyalty 0 Condition 1 & 2, [#29B] Lucius Licinius Lucullus (c. 117 BC – 57/56 BC)
+01100100.01111000 = 0x7400 : CONST Loyalty 0 Condition 1 & 2, [#30A] Gnaeus Pompeius Magnus (c. 106 BC – 48 BC)
+01100100.10000000 = 0x6800 : CONST Loyalty 0 Condition 1 & 2, [#32A] Marcus Antonius (83 BC – 30 BC)
+
+01110100.01011000 = 0x4800 : CONST Loyalty 0 Condition 3 & 4, [#22A] Marcus Porcius Cato Censorius (234 BC – 149 BC)
+01110100.01011100 = 0x6500 : CONST Loyalty 0 Condition 3 & 4, [#23A] Publius Popillius Laenas (2nd century BC)
+01110100.01100100 = 0x0065 : CONST Loyalty 0 Condition 3 & 4, [#25A] Tiberius Sempronius Gracchus (c. 166 BC – 133 BC)
+01110100.01100101 = 0x0064 : CONST Loyalty 0 Condition 3 & 4, [#25B] Gaius Sempronius Gracchus (c. 154 BC – 121 BC)
+
+10000100.01100100 = 0x0005 : CONST Can be played with Statesman 5 & 6, [#25A] Tiberius Sempronius Gracchus (c. 166 BC – 133 BC)
+10000100.01100101 = 0x0004 : CONST Can be played with Statesman 5 & 6, [#25B] Gaius Sempronius Gracchus (c. 154 BC – 121 BC)
+10000100.01110100 = 0x0005 : CONST Can be played with Statesman 5 & 6, [#29A] Marcus Licinius Crassus (c. 115 BC – 53 BC)
+10000100.01110101 = 0x0004 : CONST Can be played with Statesman 5 & 6, [#29B] Lucius Licinius Lucullus (c. 117 BC – 57/56 BC)
