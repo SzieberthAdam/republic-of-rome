@@ -995,7 +995,6 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
 = FORMAT:
 
 00011100.00xxxxxx : CONST Flags & Era
-    - Bit 0==1 if eliminates Tax Farmer
     - Bits EDC : Era
 00101100.00xxxxxx : CONST Strength
     - Bits FEDCBA98 : Land Strength
@@ -1089,7 +1088,7 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
 00011100.00001101 = 0x3000 : CONST Flags & Era, 1st Illyrian War (229 BC – 228 BC)
 00011100.00001110 = 0x3000 : CONST Flags & Era, 1st Gallic War (225 BC – 222 BC)
 00011100.00001111 = 0x3000 : CONST Flags & Era, 2nd Illyrian War (220 BC – 219 BC)
-00011100.00010000 = 0x3001 : CONST Flags & Era, 2nd Punic War (218 BC – 201 BC)
+00011100.00010000 = 0x3000 : CONST Flags & Era, 2nd Punic War (218 BC – 201 BC)
 00011100.00010001 = 0x3000 : CONST Flags & Era, 1st Macedonian War (215 BC – 205 BC)
 00011100.00010010 = 0x3000 : CONST Flags & Era, 2nd Macedonian War (200 BC – 196 BC)
 00011100.00010011 = 0x3000 : CONST Flags & Era, Syrian War (192 BC – 189 BC)
@@ -1108,7 +1107,7 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
 00011100.00100000 = 0x5000 : CONST Flags & Era, 2nd Mithridatic War (83 BC – 82 BC)
 00011100.00100001 = 0x5000 : CONST Flags & Era, Sertorian Revolt (77 BC – 71 BC)
 00011100.00100010 = 0x5000 : CONST Flags & Era, 3rd Mithridatic War (74 BC – 63 BC)
-00011100.00100011 = 0x5001 : CONST Flags & Era, Gladiator Slave Revolt (73 BC – 71 BC)
+00011100.00100011 = 0x5000 : CONST Flags & Era, Gladiator Slave Revolt (73 BC – 71 BC)
 00011100.00100100 = 0x5000 : CONST Flags & Era, 2nd Cilician Pirates (67 BC – 61 BC)
 00011100.00100101 = 0x5000 : CONST Flags & Era, 2nd Gallic War (58 BC – 56 BC)
 00011100.00100110 = 0x5000 : CONST Flags & Era, Invasion of Britain (55 BC – 54 BC)
