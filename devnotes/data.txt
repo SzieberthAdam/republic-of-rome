@@ -238,10 +238,12 @@ Note: Gaps were added to make space for extra cards of same kind (house rule).
 00001001.10101010 (0x09AA) : Scandal 2
 00001001.10110000 (0x09B0) : Spolia Opima
 00001001.11110000 (0x09F0) : Appian Way (312 BC – 308 BC)
-00001001.11110001 (0x09F1) : Cleopatra VII (69 BC – 30 BC)
-00001001.11110010 (0x09F2) : The Ultimate Decree (52 BC)
-00001001.11110011 (0x09F3) : Assassination Conspiracy (44 BC)
-00001001.11110100 (0x09F4) : Annexation of Egypt (30 BC)
+00001001.11110010 (0x09F1) : Cleopatra VII (69 BC – 30 BC)
+00001001.11110011 (0x09F2) : The Ultimate Decree (52 BC)
+00001001.11110011 (0x0D0B) : Juba I (60 BC – 46 BC)
+00001001.11110100 (0x09F1) : Ariobarzanes III (51 BC – 42 BC)
+00001001.11110101 (0x09F3) : Assassination Conspiracy (44 BC)
+00001001.11110110 (0x09F4) : Annexation of Egypt (30 BC)
 
 -- Law --
 
@@ -367,7 +369,7 @@ Note: Numbering follows chronological order.
 00001101.00001000 (0x0D08) : Viriathus (c. 180 BC – 139 BC)
 00001101.00001001 (0x0D09) : Mithridates VI (120 BC – 63 BC)
 00001101.00001010 (0x0D0A) : Spartacus (c. 111 BC – 71 BC)
-00001101.00001011 (0x0D0B) : Vercingetorix  (82 BC – 46 BC)
+00001101.00001011 (0x0D0B) : Vercingetorix (82 BC – 46 BC)
 
 
 -- Event --
@@ -764,10 +766,8 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
     - Bit 1==1 if Pontifex Maximus cannot be elected until this Leader is discarded.
     - Bit 0==1 if Leader
 10011001.00xxxxxx : CONST Disaster / Standoff
-    - Bit F==1 if Disaster Active
-    - Bit E==1 if Standoff 1 Active
-    - Bit D==1 if Standoff 1 Active
-    - Bits BA98 : Disaster Value - 3
+    - Bits FEDC : Disaster 1 Value - 3
+    - Bits BA98 : Disaster 2 Value - 3
     - Bits 7654 : Standoff 1 Value - 3
     - Bits 3210 : Standoff 2 Value - 3
 10101001.00xxxxxx : CONST Matching War 1 & 2
@@ -852,11 +852,268 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
 00011001.10101010 (0x19AA) = 0x1000 : CONST Flags & Era, Scandal 2
 00011001.10110000 (0x19B0) = 0x1000 : CONST Flags & Era, Spolia Opima
 00011001.11110000 (0x19F0) = 0x1000 : CONST Flags & Era, Appian Way (312 BC – 308 BC)
-00011001.11110001 (0x19F1) = 0x5001 : CONST Flags & Era, Cleopatra VII (69 BC – 30 BC)
-00011001.11110010 (0x19F2) = 0x6000 : CONST Flags & Era, The Ultimate Decree (52 BC)
-00011001.11110011 (0x19F3) = 0x6000 : CONST Flags & Era, Assassination Conspiracy (44 BC)
-00011001.11110100 (0x19F4) = 0x6000 : CONST Flags & Era, Annexation of Egypt (30 BC)
+00011001.11110010 (0x19F1) = 0x5A01 : CONST Flags & Era, Cleopatra VII (69 BC – 30 BC)
+00011001.11110011 (0x0D0B) = 0x6000 : CONST Flags & Era, Juba I (60 BC – 46 BC)
+00011001.11110011 (0x19F2) = 0x6000 : CONST Flags & Era, The Ultimate Decree (52 BC)
+00011001.11110100 (0x09F1) = 0x6000 : CONST Flags & Era, Ariobarzanes III (51 BC – 42 BC)
+00011001.11110101 (0x19F3) = 0x6000 : CONST Flags & Era, Assassination Conspiracy (44 BC)
+00011001.11110110 (0x19F4) = 0x6000 : CONST Flags & Era, Annexation of Egypt (30 BC)
 
+10011001.00000001 (0x1901) = 0x0000 : CONST Disaster / Standoff, Tribune 1
+10011001.00000010 (0x1902) = 0x0000 : CONST Disaster / Standoff, Tribune 2
+10011001.00000011 (0x1903) = 0x0000 : CONST Disaster / Standoff, Tribune 3
+10011001.00000100 (0x1904) = 0x0000 : CONST Disaster / Standoff, Tribune 4
+10011001.00000101 (0x1905) = 0x0000 : CONST Disaster / Standoff, Tribune 5
+10011001.00000110 (0x1906) = 0x0000 : CONST Disaster / Standoff, Tribune 6
+10011001.00000111 (0x1907) = 0x0000 : CONST Disaster / Standoff, Tribune 7
+10011001.00001000 (0x1908) = 0x0000 : CONST Disaster / Standoff, Tribune 8
+10011001.00001001 (0x1909) = 0x0000 : CONST Disaster / Standoff, Tribune 9
+10011001.00001010 (0x190A) = 0x0000 : CONST Disaster / Standoff, Tribune 10
+10011001.00001011 (0x190B) = 0x0000 : CONST Disaster / Standoff, Tribune 11
+10011001.00001100 (0x190C) = 0x0000 : CONST Disaster / Standoff, Tribune 12
+10011001.00001101 (0x190D) = 0x0000 : CONST Disaster / Standoff, Tribune 13
+10011001.00001110 (0x190E) = 0x0000 : CONST Disaster / Standoff, Tribune 14
+10011001.00001111 (0x190F) = 0x0000 : CONST Disaster / Standoff, Tribune 15
+10011001.00010000 (0x1910) = 0x0000 : CONST Disaster / Standoff, Tribune 16
+10011001.00010001 (0x1911) = 0x0000 : CONST Disaster / Standoff, Tribune 17
+10011001.00010010 (0x1912) = 0x0000 : CONST Disaster / Standoff, Tribune 18
+10011001.00010011 (0x1913) = 0x0000 : CONST Disaster / Standoff, Tribune 19
+10011001.00010100 (0x1914) = 0x0000 : CONST Disaster / Standoff, Tribune 20
+10011001.00010101 (0x1915) = 0x0000 : CONST Disaster / Standoff, Tribune 21
+10011001.00010110 (0x1916) = 0x0000 : CONST Disaster / Standoff, Tribune 22
+10011001.00010111 (0x1917) = 0x0000 : CONST Disaster / Standoff, Tribune 23
+10011001.00011000 (0x1918) = 0x0000 : CONST Disaster / Standoff, Tribune 24
+10011001.00100001 (0x1921) = 0x0000 : CONST Disaster / Standoff, Assassin 1
+10011001.00100010 (0x1922) = 0x0000 : CONST Disaster / Standoff, Assassin 2
+10011001.00100011 (0x1923) = 0x0000 : CONST Disaster / Standoff, Assassin 3
+10011001.00100100 (0x1924) = 0x0000 : CONST Disaster / Standoff, Assassin 4
+10011001.00100101 (0x1925) = 0x0000 : CONST Disaster / Standoff, Assassin 5
+10011001.00100110 (0x1926) = 0x0000 : CONST Disaster / Standoff, Assassin 6
+10011001.00100111 (0x1927) = 0x0000 : CONST Disaster / Standoff, Assassin 7
+10011001.00110001 (0x1931) = 0x0000 : CONST Disaster / Standoff, Influence Peddling 1
+10011001.00110010 (0x1932) = 0x0000 : CONST Disaster / Standoff, Influence Peddling 2
+10011001.00110011 (0x1933) = 0x0000 : CONST Disaster / Standoff, Influence Peddling 3
+10011001.00110100 (0x1934) = 0x0000 : CONST Disaster / Standoff, Influence Peddling 4
+10011001.01000001 (0x1941) = 0x0000 : CONST Disaster / Standoff, Murder of a Tribune 1
+10011001.01000010 (0x1942) = 0x0000 : CONST Disaster / Standoff, Murder of a Tribune 2
+10011001.01000011 (0x1943) = 0x0000 : CONST Disaster / Standoff, Murder of a Tribune 3
+10011001.01000100 (0x1944) = 0x0000 : CONST Disaster / Standoff, Murder of a Tribune 4
+10011001.01010001 (0x1951) = 0x0000 : CONST Disaster / Standoff, Secret Bodyguard 1
+10011001.01010010 (0x1952) = 0x0000 : CONST Disaster / Standoff, Secret Bodyguard 2
+10011001.01010011 (0x1953) = 0x0000 : CONST Disaster / Standoff, Secret Bodyguard 3
+10011001.01010100 (0x1954) = 0x0000 : CONST Disaster / Standoff, Secret Bodyguard 4
+10011001.01010101 (0x1955) = 0x0000 : CONST Disaster / Standoff, Secret Bodyguard 5
+10011001.01100000 (0x1960) = 0x0000 : CONST Disaster / Standoff, Blackmail
+10011001.01101001 (0x1969) = 0x0000 : CONST Disaster / Standoff, Graft 1
+10011001.01101010 (0x196A) = 0x0000 : CONST Disaster / Standoff, Graft 2
+10011001.01111000 (0x1978) = 0x0000 : CONST Disaster / Standoff, Mob Incited to Violence
+10011001.10000000 (0x1980) = 0x0000 : CONST Disaster / Standoff, Open Bodyguard
+10011001.10001000 (0x1988) = 0x0000 : CONST Disaster / Standoff, Proscription
+10011001.10010000 (0x1990) = 0x0000 : CONST Disaster / Standoff, Seduction
+10011001.10011000 (0x1998) = 0x0000 : CONST Disaster / Standoff, Circus Maximus
+10011001.10100000 (0x19A0) = 0x0000 : CONST Disaster / Standoff, Marriage
+10011001.10101001 (0x19A9) = 0x0000 : CONST Disaster / Standoff, Scandal 1
+10011001.10101010 (0x19AA) = 0x0000 : CONST Disaster / Standoff, Scandal 2
+10011001.10110000 (0x19B0) = 0x0000 : CONST Disaster / Standoff, Spolia Opima
+10011001.11110000 (0x19F0) = 0x0000 : CONST Disaster / Standoff, Appian Way (312 BC – 308 BC)
+10011001.11110010 (0x19F1) = 0xD0C0 : CONST Disaster / Standoff, Cleopatra VII (69 BC – 30 BC)
+10011001.11110011 (0x0D0B) = 0x0000 : CONST Disaster / Standoff, Juba I (60 BC – 46 BC)
+10011001.11110011 (0x19F2) = 0x0000 : CONST Disaster / Standoff, The Ultimate Decree (52 BC)
+10011001.11110100 (0x09F1) = 0x0000 : CONST Disaster / Standoff, Ariobarzanes III (51 BC – 42 BC)
+10011001.11110101 (0x19F3) = 0x0000 : CONST Disaster / Standoff, Assassination Conspiracy (44 BC)
+10011001.11110110 (0x19F4) = 0x0000 : CONST Disaster / Standoff, Annexation of Egypt (30 BC)
+
+10101001.00000001 (0x1901) = 0x0000 : CONST Matching War 1 & 2, Tribune 1
+10101001.00000010 (0x1902) = 0x0000 : CONST Matching War 1 & 2, Tribune 2
+10101001.00000011 (0x1903) = 0x0000 : CONST Matching War 1 & 2, Tribune 3
+10101001.00000100 (0x1904) = 0x0000 : CONST Matching War 1 & 2, Tribune 4
+10101001.00000101 (0x1905) = 0x0000 : CONST Matching War 1 & 2, Tribune 5
+10101001.00000110 (0x1906) = 0x0000 : CONST Matching War 1 & 2, Tribune 6
+10101001.00000111 (0x1907) = 0x0000 : CONST Matching War 1 & 2, Tribune 7
+10101001.00001000 (0x1908) = 0x0000 : CONST Matching War 1 & 2, Tribune 8
+10101001.00001001 (0x1909) = 0x0000 : CONST Matching War 1 & 2, Tribune 9
+10101001.00001010 (0x190A) = 0x0000 : CONST Matching War 1 & 2, Tribune 10
+10101001.00001011 (0x190B) = 0x0000 : CONST Matching War 1 & 2, Tribune 11
+10101001.00001100 (0x190C) = 0x0000 : CONST Matching War 1 & 2, Tribune 12
+10101001.00001101 (0x190D) = 0x0000 : CONST Matching War 1 & 2, Tribune 13
+10101001.00001110 (0x190E) = 0x0000 : CONST Matching War 1 & 2, Tribune 14
+10101001.00001111 (0x190F) = 0x0000 : CONST Matching War 1 & 2, Tribune 15
+10101001.00010000 (0x1910) = 0x0000 : CONST Matching War 1 & 2, Tribune 16
+10101001.00010001 (0x1911) = 0x0000 : CONST Matching War 1 & 2, Tribune 17
+10101001.00010010 (0x1912) = 0x0000 : CONST Matching War 1 & 2, Tribune 18
+10101001.00010011 (0x1913) = 0x0000 : CONST Matching War 1 & 2, Tribune 19
+10101001.00010100 (0x1914) = 0x0000 : CONST Matching War 1 & 2, Tribune 20
+10101001.00010101 (0x1915) = 0x0000 : CONST Matching War 1 & 2, Tribune 21
+10101001.00010110 (0x1916) = 0x0000 : CONST Matching War 1 & 2, Tribune 22
+10101001.00010111 (0x1917) = 0x0000 : CONST Matching War 1 & 2, Tribune 23
+10101001.00011000 (0x1918) = 0x0000 : CONST Matching War 1 & 2, Tribune 24
+10101001.00100001 (0x1921) = 0x0000 : CONST Matching War 1 & 2, Assassin 1
+10101001.00100010 (0x1922) = 0x0000 : CONST Matching War 1 & 2, Assassin 2
+10101001.00100011 (0x1923) = 0x0000 : CONST Matching War 1 & 2, Assassin 3
+10101001.00100100 (0x1924) = 0x0000 : CONST Matching War 1 & 2, Assassin 4
+10101001.00100101 (0x1925) = 0x0000 : CONST Matching War 1 & 2, Assassin 5
+10101001.00100110 (0x1926) = 0x0000 : CONST Matching War 1 & 2, Assassin 6
+10101001.00100111 (0x1927) = 0x0000 : CONST Matching War 1 & 2, Assassin 7
+10101001.00110001 (0x1931) = 0x0000 : CONST Matching War 1 & 2, Influence Peddling 1
+10101001.00110010 (0x1932) = 0x0000 : CONST Matching War 1 & 2, Influence Peddling 2
+10101001.00110011 (0x1933) = 0x0000 : CONST Matching War 1 & 2, Influence Peddling 3
+10101001.00110100 (0x1934) = 0x0000 : CONST Matching War 1 & 2, Influence Peddling 4
+10101001.01000001 (0x1941) = 0x0000 : CONST Matching War 1 & 2, Murder of a Tribune 1
+10101001.01000010 (0x1942) = 0x0000 : CONST Matching War 1 & 2, Murder of a Tribune 2
+10101001.01000011 (0x1943) = 0x0000 : CONST Matching War 1 & 2, Murder of a Tribune 3
+10101001.01000100 (0x1944) = 0x0000 : CONST Matching War 1 & 2, Murder of a Tribune 4
+10101001.01010001 (0x1951) = 0x0000 : CONST Matching War 1 & 2, Secret Bodyguard 1
+10101001.01010010 (0x1952) = 0x0000 : CONST Matching War 1 & 2, Secret Bodyguard 2
+10101001.01010011 (0x1953) = 0x0000 : CONST Matching War 1 & 2, Secret Bodyguard 3
+10101001.01010100 (0x1954) = 0x0000 : CONST Matching War 1 & 2, Secret Bodyguard 4
+10101001.01010101 (0x1955) = 0x0000 : CONST Matching War 1 & 2, Secret Bodyguard 5
+10101001.01100000 (0x1960) = 0x0000 : CONST Matching War 1 & 2, Blackmail
+10101001.01101001 (0x1969) = 0x0000 : CONST Matching War 1 & 2, Graft 1
+10101001.01101010 (0x196A) = 0x0000 : CONST Matching War 1 & 2, Graft 2
+10101001.01111000 (0x1978) = 0x0000 : CONST Matching War 1 & 2, Mob Incited to Violence
+10101001.10000000 (0x1980) = 0x0000 : CONST Matching War 1 & 2, Open Bodyguard
+10101001.10001000 (0x1988) = 0x0000 : CONST Matching War 1 & 2, Proscription
+10101001.10010000 (0x1990) = 0x0000 : CONST Matching War 1 & 2, Seduction
+10101001.10011000 (0x1998) = 0x0000 : CONST Matching War 1 & 2, Circus Maximus
+10101001.10100000 (0x19A0) = 0x0000 : CONST Matching War 1 & 2, Marriage
+10101001.10101001 (0x19A9) = 0x0000 : CONST Matching War 1 & 2, Scandal 1
+10101001.10101010 (0x19AA) = 0x0000 : CONST Matching War 1 & 2, Scandal 2
+10101001.10110000 (0x19B0) = 0x0000 : CONST Matching War 1 & 2, Spolia Opima
+10101001.11110000 (0x19F0) = 0x0000 : CONST Matching War 1 & 2, Appian Way (312 BC – 308 BC)
+10101001.11110010 (0x19F1) = 0x2A00 : CONST Matching War 1 & 2, Cleopatra VII (69 BC – 30 BC)
+10101001.11110011 (0x0D0B) = 0x0000 : CONST Matching War 1 & 2, Juba I (60 BC – 46 BC)
+10101001.11110011 (0x19F2) = 0x0000 : CONST Matching War 1 & 2, The Ultimate Decree (52 BC)
+10101001.11110100 (0x09F1) = 0x0000 : CONST Matching War 1 & 2, Ariobarzanes III (51 BC – 42 BC)
+10101001.11110101 (0x19F3) = 0x0000 : CONST Matching War 1 & 2, Assassination Conspiracy (44 BC)
+10101001.11110110 (0x19F4) = 0x0000 : CONST Matching War 1 & 2, Annexation of Egypt (30 BC)
+
+10111001.00000001 (0x1901) = 0x0000 : CONST Matching War 3 & 4, Tribune 1
+10111001.00000010 (0x1902) = 0x0000 : CONST Matching War 3 & 4, Tribune 2
+10111001.00000011 (0x1903) = 0x0000 : CONST Matching War 3 & 4, Tribune 3
+10111001.00000100 (0x1904) = 0x0000 : CONST Matching War 3 & 4, Tribune 4
+10111001.00000101 (0x1905) = 0x0000 : CONST Matching War 3 & 4, Tribune 5
+10111001.00000110 (0x1906) = 0x0000 : CONST Matching War 3 & 4, Tribune 6
+10111001.00000111 (0x1907) = 0x0000 : CONST Matching War 3 & 4, Tribune 7
+10111001.00001000 (0x1908) = 0x0000 : CONST Matching War 3 & 4, Tribune 8
+10111001.00001001 (0x1909) = 0x0000 : CONST Matching War 3 & 4, Tribune 9
+10111001.00001010 (0x190A) = 0x0000 : CONST Matching War 3 & 4, Tribune 10
+10111001.00001011 (0x190B) = 0x0000 : CONST Matching War 3 & 4, Tribune 11
+10111001.00001100 (0x190C) = 0x0000 : CONST Matching War 3 & 4, Tribune 12
+10111001.00001101 (0x190D) = 0x0000 : CONST Matching War 3 & 4, Tribune 13
+10111001.00001110 (0x190E) = 0x0000 : CONST Matching War 3 & 4, Tribune 14
+10111001.00001111 (0x190F) = 0x0000 : CONST Matching War 3 & 4, Tribune 15
+10111001.00010000 (0x1910) = 0x0000 : CONST Matching War 3 & 4, Tribune 16
+10111001.00010001 (0x1911) = 0x0000 : CONST Matching War 3 & 4, Tribune 17
+10111001.00010010 (0x1912) = 0x0000 : CONST Matching War 3 & 4, Tribune 18
+10111001.00010011 (0x1913) = 0x0000 : CONST Matching War 3 & 4, Tribune 19
+10111001.00010100 (0x1914) = 0x0000 : CONST Matching War 3 & 4, Tribune 20
+10111001.00010101 (0x1915) = 0x0000 : CONST Matching War 3 & 4, Tribune 21
+10111001.00010110 (0x1916) = 0x0000 : CONST Matching War 3 & 4, Tribune 22
+10111001.00010111 (0x1917) = 0x0000 : CONST Matching War 3 & 4, Tribune 23
+10111001.00011000 (0x1918) = 0x0000 : CONST Matching War 3 & 4, Tribune 24
+10111001.00100001 (0x1921) = 0x0000 : CONST Matching War 3 & 4, Assassin 1
+10111001.00100010 (0x1922) = 0x0000 : CONST Matching War 3 & 4, Assassin 2
+10111001.00100011 (0x1923) = 0x0000 : CONST Matching War 3 & 4, Assassin 3
+10111001.00100100 (0x1924) = 0x0000 : CONST Matching War 3 & 4, Assassin 4
+10111001.00100101 (0x1925) = 0x0000 : CONST Matching War 3 & 4, Assassin 5
+10111001.00100110 (0x1926) = 0x0000 : CONST Matching War 3 & 4, Assassin 6
+10111001.00100111 (0x1927) = 0x0000 : CONST Matching War 3 & 4, Assassin 7
+10111001.00110001 (0x1931) = 0x0000 : CONST Matching War 3 & 4, Influence Peddling 1
+10111001.00110010 (0x1932) = 0x0000 : CONST Matching War 3 & 4, Influence Peddling 2
+10111001.00110011 (0x1933) = 0x0000 : CONST Matching War 3 & 4, Influence Peddling 3
+10111001.00110100 (0x1934) = 0x0000 : CONST Matching War 3 & 4, Influence Peddling 4
+10111001.01000001 (0x1941) = 0x0000 : CONST Matching War 3 & 4, Murder of a Tribune 1
+10111001.01000010 (0x1942) = 0x0000 : CONST Matching War 3 & 4, Murder of a Tribune 2
+10111001.01000011 (0x1943) = 0x0000 : CONST Matching War 3 & 4, Murder of a Tribune 3
+10111001.01000100 (0x1944) = 0x0000 : CONST Matching War 3 & 4, Murder of a Tribune 4
+10111001.01010001 (0x1951) = 0x0000 : CONST Matching War 3 & 4, Secret Bodyguard 1
+10111001.01010010 (0x1952) = 0x0000 : CONST Matching War 3 & 4, Secret Bodyguard 2
+10111001.01010011 (0x1953) = 0x0000 : CONST Matching War 3 & 4, Secret Bodyguard 3
+10111001.01010100 (0x1954) = 0x0000 : CONST Matching War 3 & 4, Secret Bodyguard 4
+10111001.01010101 (0x1955) = 0x0000 : CONST Matching War 3 & 4, Secret Bodyguard 5
+10111001.01100000 (0x1960) = 0x0000 : CONST Matching War 3 & 4, Blackmail
+10111001.01101001 (0x1969) = 0x0000 : CONST Matching War 3 & 4, Graft 1
+10111001.01101010 (0x196A) = 0x0000 : CONST Matching War 3 & 4, Graft 2
+10111001.01111000 (0x1978) = 0x0000 : CONST Matching War 3 & 4, Mob Incited to Violence
+10111001.10000000 (0x1980) = 0x0000 : CONST Matching War 3 & 4, Open Bodyguard
+10111001.10001000 (0x1988) = 0x0000 : CONST Matching War 3 & 4, Proscription
+10111001.10010000 (0x1990) = 0x0000 : CONST Matching War 3 & 4, Seduction
+10111001.10011000 (0x1998) = 0x0000 : CONST Matching War 3 & 4, Circus Maximus
+10111001.10100000 (0x19A0) = 0x0000 : CONST Matching War 3 & 4, Marriage
+10111001.10101001 (0x19A9) = 0x0000 : CONST Matching War 3 & 4, Scandal 1
+10111001.10101010 (0x19AA) = 0x0000 : CONST Matching War 3 & 4, Scandal 2
+10111001.10110000 (0x19B0) = 0x0000 : CONST Matching War 3 & 4, Spolia Opima
+10111001.11110000 (0x19F0) = 0x0000 : CONST Matching War 3 & 4, Appian Way (312 BC – 308 BC)
+10111001.11110010 (0x19F1) = 0x0000 : CONST Matching War 3 & 4, Cleopatra VII (69 BC – 30 BC)
+10111001.11110011 (0x0D0B) = 0x0000 : CONST Matching War 3 & 4, Juba I (60 BC – 46 BC)
+10111001.11110011 (0x19F2) = 0x0000 : CONST Matching War 3 & 4, The Ultimate Decree (52 BC)
+10111001.11110100 (0x09F1) = 0x0000 : CONST Matching War 3 & 4, Ariobarzanes III (51 BC – 42 BC)
+10111001.11110101 (0x19F3) = 0x0000 : CONST Matching War 3 & 4, Assassination Conspiracy (44 BC)
+10111001.11110110 (0x19F4) = 0x0000 : CONST Matching War 3 & 4, Annexation of Egypt (30 BC)
+
+11001001.00000001 (0x1901) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 1
+11001001.00000010 (0x1902) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 2
+11001001.00000011 (0x1903) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 3
+11001001.00000100 (0x1904) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 4
+11001001.00000101 (0x1905) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 5
+11001001.00000110 (0x1906) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 6
+11001001.00000111 (0x1907) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 7
+11001001.00001000 (0x1908) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 8
+11001001.00001001 (0x1909) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 9
+11001001.00001010 (0x190A) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 10
+11001001.00001011 (0x190B) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 11
+11001001.00001100 (0x190C) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 12
+11001001.00001101 (0x190D) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 13
+11001001.00001110 (0x190E) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 14
+11001001.00001111 (0x190F) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 15
+11001001.00010000 (0x1910) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 16
+11001001.00010001 (0x1911) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 17
+11001001.00010010 (0x1912) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 18
+11001001.00010011 (0x1913) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 19
+11001001.00010100 (0x1914) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 20
+11001001.00010101 (0x1915) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 21
+11001001.00010110 (0x1916) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 22
+11001001.00010111 (0x1917) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 23
+11001001.00011000 (0x1918) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Tribune 24
+11001001.00100001 (0x1921) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 1
+11001001.00100010 (0x1922) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 2
+11001001.00100011 (0x1923) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 3
+11001001.00100100 (0x1924) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 4
+11001001.00100101 (0x1925) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 5
+11001001.00100110 (0x1926) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 6
+11001001.00100111 (0x1927) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassin 7
+11001001.00110001 (0x1931) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Influence Peddling 1
+11001001.00110010 (0x1932) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Influence Peddling 2
+11001001.00110011 (0x1933) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Influence Peddling 3
+11001001.00110100 (0x1934) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Influence Peddling 4
+11001001.01000001 (0x1941) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Murder of a Tribune 1
+11001001.01000010 (0x1942) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Murder of a Tribune 2
+11001001.01000011 (0x1943) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Murder of a Tribune 3
+11001001.01000100 (0x1944) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Murder of a Tribune 4
+11001001.01010001 (0x1951) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Secret Bodyguard 1
+11001001.01010010 (0x1952) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Secret Bodyguard 2
+11001001.01010011 (0x1953) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Secret Bodyguard 3
+11001001.01010100 (0x1954) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Secret Bodyguard 4
+11001001.01010101 (0x1955) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Secret Bodyguard 5
+11001001.01100000 (0x1960) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Blackmail
+11001001.01101001 (0x1969) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Graft 1
+11001001.01101010 (0x196A) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Graft 2
+11001001.01111000 (0x1978) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Mob Incited to Violence
+11001001.10000000 (0x1980) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Open Bodyguard
+11001001.10001000 (0x1988) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Proscription
+11001001.10010000 (0x1990) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Seduction
+11001001.10011000 (0x1998) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Circus Maximus
+11001001.10100000 (0x19A0) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Marriage
+11001001.10101001 (0x19A9) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Scandal 1
+11001001.10101010 (0x19AA) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Scandal 2
+11001001.10110000 (0x19B0) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Spolia Opima
+11001001.11110000 (0x19F0) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Appian Way (312 BC – 308 BC)
+11001001.11110010 (0x19F1) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Cleopatra VII (69 BC – 30 BC)
+11001001.11110011 (0x0D0B) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Juba I (60 BC – 46 BC)
+11001001.11110011 (0x19F2) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, The Ultimate Decree (52 BC)
+11001001.11110100 (0x09F1) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Ariobarzanes III (51 BC – 42 BC)
+11001001.11110101 (0x19F3) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Assassination Conspiracy (44 BC)
+11001001.11110110 (0x19F4) = 0x0000 :  CONST Destroys / Allows Concession 1 & 2, Annexation of Egypt (30 BC)
 
 -- Law --
 
@@ -1266,10 +1523,8 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
     - Bits 6==1 if Attacks if Province 4 is Undeveloped
     - Bits 543210 : Province 4 Entity ID
 10011100.00xxxxxx : CONST Disaster / Standoff
-    - Bit F==1 if Disaster Active
-    - Bit E==1 if Standoff 1 Active
-    - Bit D==1 if Standoff 1 Active
-    - Bits BA98 : Disaster Value - 3
+    - Bits FEDC : Disaster 1 Value - 3
+    - Bits BA98 : Disaster 2 Value - 3
     - Bits 7654 : Standoff 1 Value - 3
     - Bits 3210 : Standoff 2 Value - 3
 10101100.00xxxxxx : CONST Matching War 1 & 2
@@ -2009,10 +2264,8 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
     - Bit 0==1 ALWAYS! This makes Leader cards in par with Intrigue Leaders (Cleopatra VII)
 00101101.00xxxxxx : CONST INT Strength
 10011101.00xxxxxx : CONST Disaster / Standoff
-    - Bit F==1 if Disaster Active
-    - Bit E==1 if Standoff 1 Active
-    - Bit D==1 if Standoff 1 Active
-    - Bits BA98 : Disaster Value - 3
+    - Bits FEDC : Disaster 1 Value - 3
+    - Bits BA98 : Disaster 2 Value - 3
     - Bits 7654 : Standoff 1 Value - 3
     - Bits 3210 : Standoff 2 Value - 3
 10101101.00xxxxxx : CONST Matching War 1 & 2
@@ -2030,3 +2283,79 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
     - Bits 76==10 if Destroys Tax Farmer Concession 2
     - Bits 76==01 if Allows Concession 2
     - Bits 543210 : Destroys Concession 2 Entity ID
+
+= DEFAULTS:
+
+00011101.00000001 (0x0D01) = 0x1A00 : CONST Flags & Era, Lucius Tarquinius Superbus (? – 495 BC)
+00011101.00000010 (0x0D02) = 0x1A00 : CONST Flags & Era, Gaius Marcius Coriolanus (? – 487 BC)
+00011101.00000011 (0x0D03) = 0x2A00 : CONST Flags & Era, Pyrrhus (c. 319 BC – 272 BC)
+00011101.00000100 (0x0D04) = 0x3A00 : CONST Flags & Era, Hamilcar (c. 275 BC – 229 BC)
+00011101.00000101 (0x0D05) = 0x3A00 : CONST Flags & Era, Hannibal (247 BC – 183 BC)
+00011101.00000110 (0x0D06) = 0x3A00 : CONST Flags & Era, Antiochus III (c. 242 BC – 187 BC)
+00011101.00000111 (0x0D07) = 0x3A00 : CONST Flags & Era, Philip V (238 BC – 179 BC)
+00011101.00001000 (0x0D08) = 0x4A00 : CONST Flags & Era, Viriathus (c. 180 BC – 139 BC)
+00011101.00001001 (0x0D09) = 0x5A00 : CONST Flags & Era, Mithridates VI (120 BC – 63 BC)
+00011101.00001010 (0x0D0A) = 0x5A00 : CONST Flags & Era, Spartacus (c. 111 BC – 71 BC)
+00011101.00001011 (0x0D0B) = 0x5A00 : CONST Flags & Era, Vercingetorix (82 BC – 46 BC)
+
+00101101.00000001 (0x0D01) = 0x0001 : CONST INT Strength, Lucius Tarquinius Superbus (? – 495 BC)
+00101101.00000010 (0x0D02) = 0x0002 : CONST INT Strength, Gaius Marcius Coriolanus (? – 487 BC)
+00101101.00000011 (0x0D03) = 0x0003 : CONST INT Strength, Pyrrhus (c. 319 BC – 272 BC)
+00101101.00000100 (0x0D04) = 0x0003 : CONST INT Strength, Hamilcar (c. 275 BC – 229 BC)
+00101101.00000101 (0x0D05) = 0x0007 : CONST INT Strength, Hannibal (247 BC – 183 BC)
+00101101.00000110 (0x0D06) = 0x0005 : CONST INT Strength, Antiochus III (c. 242 BC – 187 BC)
+00101101.00000111 (0x0D07) = 0x0006 : CONST INT Strength, Philip V (238 BC – 179 BC)
+00101101.00001000 (0x0D08) = 0x0005 : CONST INT Strength, Viriathus (c. 180 BC – 139 BC)
+00101101.00001001 (0x0D09) = 0x0004 : CONST INT Strength, Mithridates VI (120 BC – 63 BC)
+00101101.00001010 (0x0D0A) = 0x0005 : CONST INT Strength, Spartacus (c. 111 BC – 71 BC)
+00101101.00001011 (0x0D0B) = 0x0006 : CONST INT Strength, Vercingetorix (82 BC – 46 BC)
+
+10011101.00000001 (0x0D01) = 0x40B0 : CONST Disaster / Standoff, Lucius Tarquinius Superbus (? – 495 BC)
+10011101.00000010 (0x0D02) = 0x00D0 : CONST Disaster / Standoff, Gaius Marcius Coriolanus (? – 487 BC)
+10011101.00000011 (0x0D03) = 0x60C0 : CONST Disaster / Standoff, Pyrrhus (c. 319 BC – 272 BC)
+10011101.00000100 (0x0D04) = 0x5090 : CONST Disaster / Standoff, Hamilcar (c. 275 BC – 229 BC)
+10011101.00000101 (0x0D05) = 0x60D0 : CONST Disaster / Standoff, Hannibal (247 BC – 183 BC)
+10011101.00000110 (0x0D06) = 0xB0E0 : CONST Disaster / Standoff, Antiochus III (c. 242 BC – 187 BC)
+10011101.00000111 (0x0D07) = 0xC0B0 : CONST Disaster / Standoff, Philip V (238 BC – 179 BC)
+10011101.00001000 (0x0D08) = 0xC090 : CONST Disaster / Standoff, Viriathus (c. 180 BC – 139 BC)
+10011101.00001001 (0x0D09) = 0x90C0 : CONST Disaster / Standoff, Mithridates VI (120 BC – 63 BC)
+10011101.00001010 (0x0D0A) = 0x80B0 : CONST Disaster / Standoff, Spartacus (c. 111 BC – 71 BC)
+10011101.00001011 (0x0D0B) = 0xB0F0 : CONST Disaster / Standoff, Vercingetorix (82 BC – 46 BC)
+
+Note: Viriathus should have errata and match with Spanish Revolts, Numantine War and Sertorian Revolt.
+
+10101101.00000001 (0x0D01) = 0x0100 : CONST Matching War 1 & 2, Lucius Tarquinius Superbus (? – 495 BC)
+10101101.00000010 (0x0D02) = 0x0200 : CONST Matching War 1 & 2, Gaius Marcius Coriolanus (? – 487 BC)
+10101101.00000011 (0x0D03) = 0x0B00 : CONST Matching War 1 & 2, Pyrrhus (c. 319 BC – 272 BC)
+10101101.00000100 (0x0D04) = 0x0C10 : CONST Matching War 1 & 2, Hamilcar (c. 275 BC – 229 BC)
+10101101.00000101 (0x0D05) = 0x0C10 : CONST Matching War 1 & 2, Hannibal (247 BC – 183 BC)
+10101101.00000110 (0x0D06) = 0x1300 : CONST Matching War 1 & 2, Antiochus III (c. 242 BC – 187 BC)
+10101101.00000111 (0x0D07) = 0x1112 : CONST Matching War 1 & 2, Philip V (238 BC – 179 BC)
+10101101.00001000 (0x0D08) = 0x1521 : CONST Matching War 1 & 2, Viriathus (c. 180 BC – 139 BC)
+10101101.00001001 (0x0D09) = 0x1F20 : CONST Matching War 1 & 2, Mithridates VI (120 BC – 63 BC)
+10101101.00001010 (0x0D0A) = 0x191D : CONST Matching War 1 & 2, Spartacus (c. 111 BC – 71 BC)
+10101101.00001011 (0x0D0B) = 0x0E25 : CONST Matching War 1 & 2, Vercingetorix (82 BC – 46 BC)
+
+10111101.00000001 (0x0D01) = 0x0000 : CONST Matching War 3 & 4, Lucius Tarquinius Superbus (? – 495 BC)
+10111101.00000010 (0x0D02) = 0x0000 : CONST Matching War 3 & 4, Gaius Marcius Coriolanus (? – 487 BC)
+10111101.00000011 (0x0D03) = 0x0000 : CONST Matching War 3 & 4, Pyrrhus (c. 319 BC – 272 BC)
+10111101.00000100 (0x0D04) = 0x1600 : CONST Matching War 3 & 4, Hamilcar (c. 275 BC – 229 BC)
+10111101.00000101 (0x0D05) = 0x1600 : CONST Matching War 3 & 4, Hannibal (247 BC – 183 BC)
+10111101.00000110 (0x0D06) = 0x0000 : CONST Matching War 3 & 4, Antiochus III (c. 242 BC – 187 BC)
+10111101.00000111 (0x0D07) = 0x1417 : CONST Matching War 3 & 4, Philip V (238 BC – 179 BC)
+10111101.00001000 (0x0D08) = 0x0000 : CONST Matching War 3 & 4, Viriathus (c. 180 BC – 139 BC)
+10111101.00001001 (0x0D09) = 0x222B : CONST Matching War 3 & 4, Mithridates VI (120 BC – 63 BC)
+10111101.00001010 (0x0D0A) = 0x2300 : CONST Matching War 3 & 4, Spartacus (c. 111 BC – 71 BC)
+10111101.00001011 (0x0D0B) = 0x2900 : CONST Matching War 3 & 4, Vercingetorix (82 BC – 46 BC)
+
+11001101.00000001 (0x0D01) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Lucius Tarquinius Superbus (? – 495 BC)
+11001101.00000010 (0x0D02) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Gaius Marcius Coriolanus (? – 487 BC)
+11001101.00000011 (0x0D03) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Pyrrhus (c. 319 BC – 272 BC)
+11001101.00000100 (0x0D04) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Hamilcar (c. 275 BC – 229 BC)
+11001101.00000101 (0x0D05) = 0xF100 : CONST Destroys / Allows Concession 1 & 2, Hannibal (247 BC – 183 BC)
+11001101.00000110 (0x0D06) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Antiochus III (c. 242 BC – 187 BC)
+11001101.00000111 (0x0D07) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Philip V (238 BC – 179 BC)
+11001101.00001000 (0x0D08) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Viriathus (c. 180 BC – 139 BC)
+11001101.00001001 (0x0D09) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Mithridates VI (120 BC – 63 BC)
+11001101.00001010 (0x0D0A) = 0xF100 : CONST Destroys / Allows Concession 1 & 2, Spartacus (c. 111 BC – 71 BC)
+11001101.00001011 (0x0D0B) = 0x0000 : CONST Destroys / Allows Concession 1 & 2, Vercingetorix (82 BC – 46 BC)
