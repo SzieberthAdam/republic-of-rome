@@ -102,7 +102,11 @@ Bit 5 represent undeveloped (0) / developed (1) version.
 -- Event --
 
 Bits 43210 represent Event ID.
-Bit 5 represent gray/front (0) / pink/back (1) version.
+Bits 65 represent seriousness. For most events this value is 0 for gray/front)
+    and 1 for pink/back version of cards. However, the results of the State of
+    the Republic speech are also represented here as special events and the
+    unique ones there are effectively some more serious versions of certain card
+    events.
 
 00000110.00000001 (0x0601) : Ally Deserts
 00000110.00000010 (0x0602) : Allied Enthusiasm
@@ -1200,15 +1204,19 @@ Note (1.07.35): "Except for Epidemics, Evil Omens, Droughts, Manpower,
 01001100.00xxxxxx : CONST Drought Condition
     - Bits FEDC: Drought Condition Key
         - FEDC==1111 : Drought
-        - FEDC==0100 : Drought if Corresponding Entity is Rome's Province
-        - FEDC==1100 : Drought if Corresponding Entity is not Rome's Province
-    - Bits BA98.76543210 : Corresponding Entity ID
+        - FEDC==0100 : Drought if NONE of the Entities is Rome's Province
+        - FEDC==0101 : Drought if ANY Entity is Rome's Province
+        - FEDC==0110 : Drought if ALL Entities are Rome's Province
+    - Bits BA9876: Province 2 Bits 543210
+    - Bits 543210: Province 1 Bits 543210
 01011100.00xxxxxx : CONST Revolt Condition
     - Bits FEDC: Revolt Condition Key
         - FEDC==1111 : Revolt
-        - FEDC==0100 : Revolt if Corresponding Entity is Rome's Province
-        - FEDC==1100 : Revolt if Corresponding Entity is not Rome's Province
-    - Bits BA98.76543210 : Corresponding Entity ID
+        - FEDC==0100 : Revolt if NONE of the Entities is Rome's Province
+        - FEDC==0101 : Revolt if ANY Entity is Rome's Province
+        - FEDC==0110 : Revolt if ALL Entities are Rome's Province
+    - Bits BA9876: Province 2 Bits 543210
+    - Bits 543210: Province 1 Bits 543210
 01101100.00xxxxxx : CONST Cost / Spoils
     - Bits FEDCBA98 : Cost
     - Bits 76543210 : Spoils
