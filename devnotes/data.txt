@@ -2454,3 +2454,100 @@ Note: Viriathus should have errata and match with Spanish Revolts, Numantine War
 
 
 -- Family Card --
+
+= FORMAT:
+
+00011111.xxxxxxxx : CONST Flags 1 & Era
+    - Bits EDC : Era
+00111111.xxxxxxxx : CONST Initial Ratings
+    - Bits FED : Military
+    - Bits CBA : Oratory
+    - Bits 9876 : Loyalty
+    - Bits 543 : Initial Influence
+    - Bits 210 : Initial Popularity
+10011111.xxxxxxxx : Flags
+    - Bit 0==1 if Prior Consul
+    - Bit 1==1 if Priest
+    - Bit 2==1 if Corrupt
+    - Bit 3==1 if Exile
+    - Bit 8==1 if Cannot be played unless there are less than 6 remaining in the Italian Deck.
+    - Bit E==1 if Secondary Rebel
+    - Bit F==1 if Main Rebel
+10101111.xxxxxxxx : Ratings
+    - Bits FEDCBA98 : UINT Influence
+    - Bits 43210 : UINT Popularity + 9
+10111111.xxxxxxxx : UINT Knights
+11001111.xxxxxxxx : Captive
+    - Bits FEDCBA98 : Captive by War; War Entity ID
+11111111.xxxxxxxx : Alignment
+    - Bits A98 : Faction Nr
+
+00011111.00000001 (0x0F01) = 0x3000 : CONST Flags 1 & Era, [#1] Cornelius
+00011111.00000010 (0x0F02) = 0x3000 : CONST Flags 1 & Era, [#2] Fabius
+00011111.00000011 (0x0F03) = 0x3000 : CONST Flags 1 & Era, [#3] Valerius
+00011111.00000100 (0x0F04) = 0x3000 : CONST Flags 1 & Era, [#4] Julius
+00011111.00000101 (0x0F05) = 0x3000 : CONST Flags 1 & Era, [#5] Claudius
+00011111.00000110 (0x0F06) = 0x3000 : CONST Flags 1 & Era, [#6] Manlius
+00011111.00000111 (0x0F07) = 0x3000 : CONST Flags 1 & Era, [#7] Fulvius
+00011111.00001000 (0x0F08) = 0x3000 : CONST Flags 1 & Era, [#8] Furius
+00011111.00001001 (0x0F09) = 0x3000 : CONST Flags 1 & Era, [#9] Aurelius
+00011111.00001010 (0x0F0A) = 0x3000 : CONST Flags 1 & Era, [#10] Junius
+00011111.00001011 (0x0F0B) = 0x3000 : CONST Flags 1 & Era, [#11] Papirius
+00011111.00001100 (0x0F0C) = 0x3000 : CONST Flags 1 & Era, [#12] Acilius
+00011111.00001101 (0x0F0D) = 0x3000 : CONST Flags 1 & Era, [#13] Flaminius
+00011111.00001110 (0x0F0E) = 0x3000 : CONST Flags 1 & Era, [#14] Aelius
+00011111.00001111 (0x0F0F) = 0x3000 : CONST Flags 1 & Era, [#15] Sulpicius
+00011111.00010000 (0x0F10) = 0x3000 : CONST Flags 1 & Era, [#16] Calpurnius
+00011111.00010001 (0x0F11) = 0x3000 : CONST Flags 1 & Era, [#17] Plautius
+00011111.00010010 (0x0F12) = 0x3000 : CONST Flags 1 & Era, [#18] Quinctius
+00011111.00010011 (0x0F13) = 0x3000 : CONST Flags 1 & Era, [#19] Aemilius
+00011111.00010100 (0x0F14) = 0x3000 : CONST Flags 1 & Era, [#20] Terentius
+00011111.00010101 (0x0F15) = 0x4000 : CONST Flags 1 & Era, [#21] Servilius
+00011111.00010110 (0x0F16) = 0x4000 : CONST Flags 1 & Era, [#22] Porcius
+00011111.00010111 (0x0F17) = 0x4000 : CONST Flags 1 & Era, [#23] Popillius
+00011111.00011000 (0x0F18) = 0x4000 : CONST Flags 1 & Era, [#24] Cassius
+00011111.00011001 (0x0F19) = 0x4000 : CONST Flags 1 & Era, [#25] Sempronius
+00011111.00011010 (0x0F1A) = 0x5000 : CONST Flags 1 & Era, [#26] Octavius
+00011111.00011011 (0x0F1B) = 0x5000 : CONST Flags 1 & Era, [#27] Marius
+00011111.00011100 (0x0F1C) = 0x5000 : CONST Flags 1 & Era, [#28] Tullius
+00011111.00011101 (0x0F1D) = 0x5000 : CONST Flags 1 & Era, [#29] Licinius
+00011111.00011110 (0x0F1E) = 0x5000 : CONST Flags 1 & Era, [#30] Pompeius
+00011111.00011111 (0x0F1F) = 0x6000 : CONST Flags 1 & Era, [#31] Domitius
+00011111.00100000 (0x0F20) = 0x6000 : CONST Flags 1 & Era, [#32] Antonius
+00011111.00100001 (0x0F21) = 0x6000 : CONST Flags 1 & Era, [#33] Caecilius
+00011111.00100010 (0x0F22) = 0x6000 : CONST Flags 1 & Era, [#34] Marcius
+
+00011111.00000001 (0x0F01) = 0x8E68 : CONST Initial Ratings, [#1] Cornelius
+00011111.00000010 (0x0F02) = 0x8A68 : CONST Initial Ratings, [#2] Fabius
+00011111.00000011 (0x0F03) = 0x2AA8 : CONST Initial Ratings, [#3] Valerius
+00011111.00000100 (0x0F04) = 0x8E60 : CONST Initial Ratings, [#4] Julius
+00011111.00000101 (0x0F05) = 0x4DE0 : CONST Initial Ratings, [#5] Claudius
+00011111.00000110 (0x0F06) = 0x69E0 : CONST Initial Ratings, [#6] Manlius
+00011111.00000111 (0x0F07) = 0x4A20 : CONST Initial Ratings, [#7] Fulvius
+00011111.00001000 (0x0F08) = 0x6E18 : CONST Initial Ratings, [#8] Furius
+00011111.00001001 (0x0F09) = 0x4DD8 : CONST Initial Ratings, [#9] Aurelius
+00011111.00001010 (0x0F0A) = 0x2A18 : CONST Initial Ratings, [#10] Junius
+00011111.00001011 (0x0F0B) = 0x2998 : CONST Initial Ratings, [#11] Papirius
+00011111.00001100 (0x0F0C) = 0x49D8 : CONST Initial Ratings, [#12] Acilius
+00011111.00001101 (0x0F0D) = 0x8998 : CONST Initial Ratings, [#13] Flaminius
+00011111.00001110 (0x0F0E) = 0x71D8 : CONST Initial Ratings, [#14] Aelius
+00011111.00001111 (0x0F0F) = 0x6A10 : CONST Initial Ratings, [#15] Sulpicius
+00011111.00010000 (0x0F10) = 0x2A50 : CONST Initial Ratings, [#16] Calpurnius
+00011111.00010001 (0x0F11) = 0x4590 : CONST Initial Ratings, [#17] Plautius
+00011111.00010010 (0x0F12) = 0x6988 : CONST Initial Ratings, [#18] Quinctius
+00011111.00010011 (0x0F13) = 0x8A08 : CONST Initial Ratings, [#19] Aemilius
+00011111.00010100 (0x0F14) = 0x4588 : CONST Initial Ratings, [#20] Terentius
+00011111.00010101 (0x0F15) = 0x7260 : CONST Initial Ratings, [#21] Servilius
+00011111.00010110 (0x0F16) = 0x5288 : CONST Initial Ratings, [#22] Porcius
+00011111.00010111 (0x0F17) = 0x2DD8 : CONST Initial Ratings, [#23] Popillius
+00011111.00011000 (0x0F18) = 0x6E58 : CONST Initial Ratings, [#24] Cassius
+00011111.00011001 (0x0F19) = 0x2D98 : CONST Initial Ratings, [#25] Sempronius
+00011111.00011010 (0x0F1A) = 0x4E60 : CONST Initial Ratings, [#26] Octavius
+00011111.00011011 (0x0F1B) = 0x8A60 : CONST Initial Ratings, [#27] Marius
+00011111.00011100 (0x0F1C) = 0x4DD8 : CONST Initial Ratings, [#28] Tullius
+00011111.00011101 (0x0F1D) = 0x6A58 : CONST Initial Ratings, [#29] Licinius
+00011111.00011110 (0x0F1E) = 0x49D0 : CONST Initial Ratings, [#30] Pompeius
+00011111.00011111 (0x0F1F) = 0x49E8 : CONST Initial Ratings, [#31] Domitius
+00011111.00100000 (0x0F20) = 0x69C8 : CONST Initial Ratings, [#32] Antonius
+00011111.00100001 (0x0F21) = 0x6DA8 : CONST Initial Ratings, [#33] Caecilius
+00011111.00100010 (0x0F22) = 0x2A10 : CONST Initial Ratings, [#34] Marcius
