@@ -1,0 +1,56 @@
+##############
+###  INFO  ###
+##############
+
+Every entities and values are represented on 2 BYTES.
+LSB (least significant bit) 0 bit numbering: FEDCBA98.76543210
+
+ID Sizes in Bits :
+    - 08 00000010.xxxxxxxx Statesman
+    - 08 00000001.xxxxxxxx Intrigue
+    - 07 00000011.0xxxxxxx Event
+    - 06 War 00000010.00xxxxxx
+    - 06 Senator 00000100.00xxxxxx
+    - 06 Province 00000010.11xxxxxx
+    - 05 Leader 00000010.01xxxxxx
+    - 05 Law: 5
+    - 05 Event Card
+    - 05 Concession
+    - 04 Draw Pile
+    - 03 Force Pool
+    - 03 Faction (Hand)
+    - 03 Curia
+    - 03 Available Forces in Rome
+    - 02 Dice
+    - 01 Played Laws
+    - 01 Forum
+    - 01 Discard Pile
+    - 01 Box
+    -
+
+
+00000000.00000000 : Box
+00000000.00000001 : Rome
+00000000.00111010 : Active Wars
+00000000.00111000 : Inactive Wars
+00000000.00110001 : Imminent Wars
+00000000.00110000 : Unprosecuted Wars
+00000000.01010101 : Settings
+00000000.01011110 : Secret Location
+00000000.11010000 : Any Deck
+00000000.11010001 : Deck 1
+00000000.11010010 : Deck 2
+00000000.11010011 : Deck 3
+00000000.11010100 : Deck 4
+00000000.11010101 : Deck 5
+00000000.11010110 : Deck 6
+00000000.11010111 : Deck 7
+00000000.11011000 : Deck 8
+00000000.11011001 : Deck 9
+00000000.11011010 : Deck 10
+00000000.11011011 : Deck 11
+00000000.11011100 : Deck 12
+00000000.11011101 : Deck 13
+00000000.11011110 : Deck 14
+00000000.11011111 : Deck 15
+00000000.11110000 : Forum

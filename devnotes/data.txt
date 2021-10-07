@@ -45,11 +45,47 @@ Bits BA represent the entity's main type:
 === non-card ===
 ================
 
-Bit 9 represent:
-    - 0 : virtual
-    - 1 : physical
+Bit 98 represent:
+    - 00 : Virtual
+    - 01 : Virtual
+    - 10 : Physical Game Components
+    - 11 : Physical Markers / Chits
 
 
+--- virtual ---
+    - Settings
+
+--- Physical Game Components ---
+
+    - 0 : Box
+    - 1 : Board
+        - Forum
+        - Active Wars
+        - Unprosecuted Wars
+        - Imminent Wars
+        - Draw Pile (multiple in serial)
+        - Discard Pile
+        - Inactive Wars
+        - Curia
+            - Curia, Enemy Leaders
+            - Curia, Repopulating Rome
+            - Curia, Destroyed Concessions
+        - Force Pool
+        - Available Forces
+            - Legion
+            - Fleet
+            - Veteran
+        - Laws
+        - Land Bills (I; II, II; III, III, III)
+        - State Treasury
+        - Unrest Level
+    - 2 : Faction Hand (8)
+    - 3 : Dice
+
+--- Physical Markers / Chits ---
+    - 25 Legion (Regular+Veteran)
+    - 25 Fleet
+    - 11 Major Office
 
 === other card ===
 ==================
@@ -2481,6 +2517,8 @@ Note: Viriathus should have errata and match with Spanish Revolts, Numantine War
     - Bits FEDCBA98 : Captive by War; War Entity ID
 11111111.xxxxxxxx : Alignment
     - Bits A98 : Faction Nr
+
+= DEFAULTS:
 
 00011111.00000001 (0x1F01) = 0x3000 : CONST Flags 1 & Era, [#1] Cornelius
 00011111.00000010 (0x1F02) = 0x3000 : CONST Flags 1 & Era, [#2] Fabius
