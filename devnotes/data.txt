@@ -81,6 +81,7 @@ Bit 98 represent:
         - Unrest Level
     - 2 : Faction Hand (8)
     - 3 : Dice
+    - 4 : Talent
 
 --- Physical Markers / Chits ---
     - 25 Legion (Regular+Veteran)

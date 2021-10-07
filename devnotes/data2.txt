@@ -6,21 +6,34 @@ Every entities and values are represented on 2 BYTES.
 LSB (least significant bit) 0 bit numbering: FEDCBA98.76543210
 
 ID Sizes in Bits :
-    - 08 00000010.xxxxxxxx Statesman
-    - 08 00000001.xxxxxxxx Intrigue
-    - 07 00000011.0xxxxxxx Event
-    - 06 War 00000010.00xxxxxx
-    - 06 Senator 00000100.00xxxxxx
-    - 06 Province 00000010.11xxxxxx
-    - 05 Leader 00000010.01xxxxxx
-    - 05 Law: 5
+    - 08 000vvvvv.xxxxxxxx Main Stuff
+    - 06 10000vvv.vvxxxxxx Senator
+    - 06 10001vvv.vvxxxxxx Province
+    - 07 0010vvvv.vxxxxxxx Event
+
+    - 08 100vvvvv.xxxxxxxx RED Statesman
+    - 08 101vvvvv.xxxxxxxx RED Intrigue
+    - 05 110001vv.vvvxxxxx RED Leader
+    - 05 110010vv.vvvxxxxx RED Law
+    - 05 110011vv.vvvxxxxx RED Concession
+    -    111 Talent
+
+
+
+
+    - 06 10010vvv.vvxxxxxx War
+
+
     - 05 Event Card
-    - 05 Concession
+
+
     - 04 Draw Pile
+
     - 03 Force Pool
     - 03 Faction (Hand)
     - 03 Curia
     - 03 Available Forces in Rome
+
     - 02 Dice
     - 01 Played Laws
     - 01 Forum
